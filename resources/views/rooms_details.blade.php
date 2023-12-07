@@ -41,10 +41,11 @@
     <div class="room-details-type__availability">
         <h4 class="room-details-type-availability__h4">Check Availability</h4>
         <form class="room-details-type-availability__form" id="room-details-type-availability__form" method="POST">
+            @csrf
             <label for="check-in">Check In</label>
-            <input type="date" name="check-in" id="room-details-type-availability-form__check-in" min="<?=date('Y-m-d')?>" required/>
+            <input type="date" name="check-in" value="{{$check_in}}" id="room-details-type-availability-form__check-in" min="{{date('Y-m-d')}}" {{ $check_in ? 'readonly' : '' }}/>
             <label for="check-out">Check Out</label>
-            <input type="date" name="check-out" id="room-details-type-availability-form__check-out" required/>
+            <input type="date" name="check-out" value="{{$check_out}}" id="room-details-type-availability-form__check-out" min="{{date('Y-m-d', strtotime('+1 day'))}}" {{ $check_out ? 'readonly' : '' }}/>
             <label for="name">Full Name</label>
             <input type="text" name="name" id="room-details-type-availability-form__name" placeholder="Full Name" required/>
             <label for="email">Email</label>

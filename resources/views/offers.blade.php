@@ -21,7 +21,7 @@
 @foreach ($rooms as $room)
     <section class="luxury-rooms-offers">
         <div class="luxury-rooms-offers-container__info-price">
-            <img class="luxury-rooms-offers-container-info-price__img" src="/img/slider-rooms1.jpeg" alt="luxury-room" />
+            <img class="luxury-rooms-offers-container-info-price__img" src="{{$room['URL']}}" alt="luxury-room" />
             <div class="luxury-rooms-offers-container-info-prices__container">
                 <h4 class="luxury-rooms-offers-container-info-price__price-before">
                     <del>${{$room['price']}}</del><span>/Night</span>
@@ -117,7 +117,7 @@
                             <img class="discover-rooms-icons__img" src="/img/no-smoking-icon.png" alt="no-smoking-icon" />
                             <img class="discover-rooms-icons__img" src="/img/cocktail-icon.png" alt="cocktail-icon" />
                         </div>
-                        <img class="swiper-slide__img" src="/img/slider-rooms1.jpeg" alt="img1" />
+                        <img class="swiper-slide__img" src="{{$room['URL']}}"alt="img1" />
                         <div class="box-container">
                             <h3 class="rooms-list-room__h3">{{$room['room_type']}}</h3>
                             <p class="rooms-list-room__paraph">{{$room['description']}}.</p>

@@ -19,14 +19,14 @@
 </section>
 
 <section class="banner__checkdate">
-    <form class="banner-checkdate__form" id="form_check_availability" method="GET" action="rooms.php">
+    <form class="banner-checkdate__form" id="form_check_availability" method="GET" action="/rooms-request">
         <div class="banner-checkdate-form__input-container">
             <label for="arrive">Arrival date</label>
-            <input type="date" name="check_in" id="check_in_rooms" value="<?=date('Y-m-d')?>" min="<?=date('Y-m-d')?>"/>
+            <input type="date" name="check_in" id="check_in_rooms" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}"/>
         </div>
         <div class="banner-checkdate-form__input-container">
             <label>Departure Date</label>
-            <input type="date" name="check_out" id="check_out_rooms"/>
+            <input type="date" min="{{date('Y-m-d', strtotime('+1 day'))}}" value="{{date('Y-m-d', strtotime('+1 day'))}}" name="check_out" id="check_out_rooms"/>
         </div>
         <button class="banner-checkdate-form__button" type="submit">
             CHECK AVAILABILITY

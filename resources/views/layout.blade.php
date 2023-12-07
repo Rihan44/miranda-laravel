@@ -22,7 +22,7 @@
                  <div class="header__boxlogo">
                      H
                  </div>
-                 <a href="/home">
+                 <a href="/">
                      <h1 class="header-titlebox__title">
                          HOTEL
                          <span class="header-titlebox-title__span">
@@ -146,7 +146,8 @@
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
      @if($form_sent)
      <script>
-         Toastify({
+        alert('eu');
+         Toastify(
              text: "{{$notification}}",
              duration: 3000,
              newWindow: true,
@@ -160,6 +161,25 @@
              }
              }).showToast();
      </script> 
+
+
+     @elseif (session('form_sent'))
+        <script>
+            alert('eu');
+            Toastify(
+                text: "{{session('notification')}}",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "top", 
+                position: "center", 
+                stopOnFocus: true, 
+                style: {
+                    background: "rgba(17, 17, 17, 1)",
+                    color: "rgba(153, 153, 153, 1)"
+                }
+                }).showToast();
+        </script> 
     @endif
  </body>
  </html>

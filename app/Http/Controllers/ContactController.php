@@ -16,7 +16,8 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         if ($request->isMethod('post')) {
-            Contact::create([
+            
+            $contact = Contact::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
                 'phone' => $request->input('number'),
@@ -24,12 +25,16 @@ class ContactController extends Controller
                 'email_description' => $request->input('message'),
                 'date' => now()->format('Y-m-d'),
                 'date_time' => now()->format('Y-m-d H:i:s'),
-                'is_archived' => true,
+                'is_archived' => false,
             ]);
 
-            $form_sent = true;
-            $notification = 'Form sent successfully!';
-            return view('contact', ['form_sent' => $form_sent, 'notification' => $notification]);
+            if($contact->wasRecentlyCreated){
+                $form_sent = true;
+                $notification = 'Form sent successfully!';
+    
+                return view('contact', ['form_sent' => $form_sent, 'notification' => $notification]);
+            }
+
         } else {
             return view('contact');
         }
