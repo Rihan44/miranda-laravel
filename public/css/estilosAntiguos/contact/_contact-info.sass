@@ -1,0 +1,70 @@
+@import "../variables"
+
+main 
+    div.contact-info
+        width: 100%
+        padding: 30px
+        margin: auto
+        margin-top: 40px
+        max-width: 500px
+        div.contact-info__container
+            width: 100% 
+            display: flex
+            margin-bottom: 120px
+            img.contact-info-container__img
+                width: 40px 
+                height: 38px
+            div.contact-info-container__data
+                display: flex
+                flex-direction: column
+                margin-left: 40px
+                background: none
+                h4.contact-info-container-data__h4
+                    font-family: $fontSecundaria
+                    font-size: 1.25em
+                    line-height: 24px
+                    font-weight: 400 
+                    color: $color-tercero
+                    margin-bottom: 30px
+                    background: none
+                p.contact-info-container-data__paraph
+                    font-family: $fontRoboto
+                    font-weight: 400
+                    font-size: 13px
+                    line-height: 17px
+                    color: rgba(119, 119, 119, 1)
+                    background: none
+        div.contact-info__container:nth-child(1)
+            background: url('/img/01.png')
+            background-position: top right  
+            background-repeat: no-repeat
+        div.contact-info__container:nth-child(2)
+            background: url('/img/02.png')
+            background-position: top right  
+            background-repeat: no-repeat
+        div.contact-info__container:nth-child(3)
+            background: url('/img/03.png')
+            background-position: top right  
+            background-repeat: no-repeat
+            margin-bottom: 0px
+
+@media screen and (min-width: 1000px)
+    main 
+        div.contact-info
+            width: 80%
+            padding: 0px
+            margin: 0 auto
+            margin-top: 50px
+            display: flex
+            height: 100px
+            justify-content: center
+            max-width: 1300px
+            div.contact-info__container
+                width: 30% 
+                display: flex
+                margin-bottom: 120px
+                img.contact-info-container__img
+                    width: 40px 
+                    height: 38px
+                    margin-left: 20px
+            

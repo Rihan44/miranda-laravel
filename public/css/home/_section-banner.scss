@@ -1,0 +1,152 @@
+@import "../utils/variables";
+main {
+    padding-top: 85px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    height: auto;
+    background: $color-principal;
+    section.banner {
+      background: rgba(51, 51, 51, 1);
+      color: $color-principal;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      img.banner__img {
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        filter: blur(5px);
+      } 
+
+      div.banner__container {
+        background: none;
+        max-width: 600px;
+        margin: auto;
+        z-index: 1;
+        background: none;
+        padding: 0px 10px;
+
+        h2.banner__firstitle {
+          width: 80%;
+          font-family: $fontPrincipal;
+          line-height: 18px;
+          letter-spacing: 2.8px;
+          font-size: 0.8em;
+          margin-top: 60px;
+          background: none;
+        }
+
+        h3.banner__secondtitle {
+          font-family: $fontSecundaria;
+          line-height: 60px;
+          letter-spacing: -1.2px;
+          font-weight: 400;
+          font-size: 3.5em;
+          width: 100%;
+          margin-top: 40px;
+          background: none;
+        }
+
+        div.banner__buttons {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          width: 100%;
+          background: none;
+          margin-top: 50px;
+          
+          button {
+            width: 60%;
+            padding: 20px;
+            cursor: pointer;
+            border: none;
+            color: $color-principal;
+            font-size: 0.875em;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            font-family: $fontPrincipal;
+            font-weight: 700;
+          }
+          button.banner-buttons__tour {
+            background: none;
+            border: 2px solid gray;
+            margin-bottom: 30px;
+            transition: 0.5s;
+
+            &:hover {
+              background: rgba(190, 173, 142, 1);
+              border: 2px solid rgba(190, 173, 142, 1);
+            }
+          }
+          button.banner-buttons__more {
+            background: none;
+            border: 2px solid gray;
+            margin-bottom: 60px;
+            transition: 0.5s;
+
+            &:hover {
+              background: rgba(190, 173, 142, 1);
+              border: 2px solid rgba(190, 173, 142, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    main {
+      padding-top: 0px;
+      section.banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px;
+        width: 100%;
+        margin-top: 50px;
+        position: relative;
+        z-index: 0;
+        
+        div.banner__container {
+          max-width: 1300px;
+          h2.banner__firstitle {
+            width: 50%;
+            margin-top: 160px;
+            margin-left: 10px;
+          }
+          h3.banner__secondtitle {
+            width: 70%;
+            margin-top: 40px;
+            font-size: 100px;
+            letter-spacing: -3.6px;
+            line-height: 100px;
+          }
+          div.banner__buttons {
+            display: flex;
+            flex-direction: row;
+            height: auto;
+            align-items: center;
+            width: 55%;
+            margin-top: 30px;
+            margin-bottom: 70px;
+            button {
+              width: 40%;
+            }
+            button.banner-buttons__tour {
+              margin-bottom: 0px;
+              margin-top: 0px;
+              margin-right: 40px;
+            }
+            button.banner-buttons__more {
+              margin-bottom: 0px;
+              border: 1px solid gray;
+            }
+          }
+        }
+      }
+    }
+  };
+

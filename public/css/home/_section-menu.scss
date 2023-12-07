@@ -1,0 +1,303 @@
+@import "../utils/variables";
+
+main {
+    section.menu {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 100%;
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 50px;
+      margin-top: 30px;
+      overflow: hidden;
+      img.menu__img {
+        position: absolute;
+        left: 80%;
+        width: 110px;
+        overflow: hidden;
+        top: 0;
+      }
+      h4.menu__h4 {
+        background: none;
+        font-size: 0.875em;
+        color: rgba(119, 119, 119, 1);
+        font-family: $fontPrincipal;
+        letter-spacing: 2.8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 18px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      h2.menu__h2 {
+        font-weight: 400;
+        font-family: $fontSecundaria;
+        font-size: 3.5em;
+        line-height: 60px;
+        letter-spacing: -1.2px;
+        color: $color-tercero;
+        margin-bottom: 40px;
+      }
+      div#swiper-menu {
+        div.swiper-menu__buttons {
+          margin-top: 10px;
+          div.swiper-menu-buttons__prev {
+            background: rgba(248, 248, 248, 1);
+            top: 98%;
+            left: 70%;
+            width: 36px;
+            height: 36px;
+            font-size: 10px;
+            color: $color-tercero;
+          }
+          div.swiper-menu-buttons__prev::after,
+          .swiper-rtl .swiper-menu-buttons__prev::after {
+            content: 'prev';
+            font-size: 1.1em;
+          }
+          div.swiper-menu-buttons__prev:hover {
+            background: $color-secundario;
+            color: $color-principal;
+          }
+          div.swiper-menu-buttons__next {
+            top: 98%;
+            left: 85%;
+            background: rgba(248, 248, 248, 1);
+            width: 36px;
+            height: 36px;
+            font-size: 10px;
+            color: $color-tercero;
+          }
+          div.swiper-menu-buttons__next::after,
+          .swiper-rtl .swiper-menu-buttons__next::after {
+            content: 'next';
+            font-size: 1.1em;
+          }
+          div.swiper-menu-buttons__next:hover {
+            background: $color-secundario;
+            color: $color-principal;
+          }
+        }
+        div.slide-menu {
+          div.slide-menu__food {
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-around;
+            img {
+              display: none;
+            }
+            div.slider-menu-food-container__img1 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/eggs&bacon.jpg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__img2 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/tea&coffe.jpg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__img3 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/chia.jpg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__img4 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/fruit.jpg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__img5 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/marmalade.jpeg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__img6 {
+              width: 100%;
+              height: 140px;
+              margin-right: 30px;
+              background: url('/img/cheeseplate.jpg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            div.slider-menu-food-container__description {
+              width: 90%;
+            }
+            h3.slider-menu-food__h3 {
+              font-weight: 400;
+              font-family: $fontSecundaria;
+              font-size: 1.5em;
+              letter-spacing: -0.72px;
+              line-height: 24px;
+              color: $color-tercero;
+              margin-bottom: 10px;
+            }
+            p.slider-menu-food__paraph {
+              font-family: $fontRoboto;
+              font-weight: 400;
+              font-size: 0.875em;
+              line-height: 24px;
+              color: $color-tercero;
+            }
+          }
+        }
+      }
+      div.swiper-menu-desktop {
+        display: none;
+      }
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    main {
+      section.menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 100px;
+        margin-top: 0px;
+        max-width: 1300px;
+        img.menu__img {
+          position: relative;
+          left: -90px;
+          width: 110px;
+          top: 0;
+        }
+        div#swiper-menu-desktop {
+          display: block;
+          div.slide-menu {
+            display: flex;
+            width: 100%;
+            div.slide-menu__container:nth-child(2) {
+              margin-right: 20px;
+            }
+            div.slide-menu__container {
+              margin-right: 50px;
+              div.slide-menu__food {
+                width: 100%;
+                display: flex;
+                margin-bottom: 20px;
+                justify-content: space-around;
+                img {
+                  width: 120px;
+                  height: 120px;
+                }
+                img.slider-menu-food-container__img-arrow {
+                  width: 32px;
+                  height: 15px;
+                  align-self: center;
+                  margin-left: 15px;
+                }
+                div.slider-menu-food-container__description {
+                  width: 60%;
+                  margin-left: 20px;
+                  transition: 0.5s;
+                  
+                  &:hover {
+                    background: $color-tercero;
+                    padding: 10px;
+                    width: 80%;
+                    padding-right: 20px;
+                    h3.slider-menu-food__h3 {
+                      color: rgba(255, 255, 255, 1);
+                    }
+                    p.slider-menu-food__paraph {
+                      color: rgba(255, 255, 255, 1);
+                    }
+                    img {
+                      width: 20px;
+                      background: none;
+                      position: absolute;
+                      margin-left: 0px;
+                      right: 30px;
+                      top: 190px;
+                    }
+                  }
+                }
+
+                h3.slider-menu-food__h3 {
+                  font-weight: 400;
+                  font-family: $fontSecundaria;
+                  font-size: 1.5em;
+                  letter-spacing: -0.72px;
+                  line-height: 24px;
+                  color: $color-tercero;
+                  margin-bottom: 10px;
+                }
+                p.slider-menu-food__paraph {
+                  font-family: $fontRoboto;
+                  font-weight: 400;
+                  font-size: 0.875em;
+                  line-height: 24px;
+                  color: $color-tercero;
+                }
+              }
+            }
+          }
+          div.swiper-menu__buttons {
+            margin-top: 0px;
+            div.swiper-menu-buttons__prev {
+              background: rgba(248, 248, 248, 1);
+              top: 30%;
+              left: 80%;
+              width: 70px;
+              height: 70px;
+              font-size: 10px;
+              color: $color-tercero;
+            }
+            div.swiper-menu-buttons__prev::after,
+            .swiper-rtl .swiper-menu-buttons__prev::after {
+              content: 'prev';
+              font-size: 1.1em;
+            }
+            div.swiper-menu-buttons__prev:hover {
+              background: $color-secundario;
+              color: $color-principal;
+            }
+            div.swiper-menu-buttons__next {
+              top: 30%;
+              left: 90%;
+              background: rgba(248, 248, 248, 1);
+              width: 70px;
+              height: 70px;
+              font-size: 10px;
+              color: $color-tercero;
+            }
+            div.swiper-menu-buttons__next::after,
+            .swiper-rtl .swiper-menu-buttons__next::after {
+              content: 'next';
+              font-size: 1.1em;
+            }
+            div.swiper-menu-buttons__next:hover {
+              background: $color-secundario;
+              color: $color-principal;
+            }
+          }
+        }
+        div#swiper-menu {
+          display: none;
+        }
+      }
+    }
+  };

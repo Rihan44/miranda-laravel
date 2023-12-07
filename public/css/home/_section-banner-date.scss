@@ -1,0 +1,95 @@
+@import "../utils/variables";
+
+main {
+  section.banner__checkdate {
+    background: $color-tercero;
+    height: auto;
+
+    form.banner-checkdate__form {
+      display: flex;
+      flex-direction: column;
+      background: $color-tercero;
+      color: $color-principal;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+
+      div.banner-checkdate-form__input-container {
+        background: none;
+        display: flex;
+        flex-direction: column;
+
+        label,
+        input {
+          background: $color-tercero;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-family: $fontRoboto;
+          font-size: 1em;
+          font-weight: 700;
+          border: none;
+          cursor: pointer;
+        }
+
+        input {
+          border-bottom: 1px solid rgba(190, 173, 142, 1);
+          padding-bottom: 10px;
+          color: rgba(104, 104, 104, 1);
+          outline-color: rgba(190, 173, 142, 1);
+        }
+      }
+
+      button.banner-checkdate-form__button {
+        width: 80%;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: none;
+        color: $color-principal;
+        font-size: 0.875em;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+        font-family: $fontPrincipal;
+        font-weight: 700;
+        background: rgba(190, 173, 142, 1);
+        transition: 0.5s;
+        border: 2px solid rgba(190, 173, 142, 1);
+
+        &:hover {
+          background-color: rgba(51, 51, 51, 1);
+          border: 2px solid gray;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    section.banner__checkdate {
+      form.banner-checkdate__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1300px;
+
+        div.banner-checkdate-form__input-container {
+          background: none;
+          display: flex;
+          flex-direction: column;
+          width: 25%;
+        }
+
+        button.banner-checkdate-form__button {
+          width: 25%;
+          padding: 20px;
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+;

@@ -1,0 +1,57 @@
+@import "../variables"
+
+main 
+    section.room-details__amenities
+        display: flex
+        flex-direction: column
+        width: 100% 
+        padding: 10px
+        margin: auto
+        margin-top: 40px
+        max-width: 600px
+        h2.room-details-amenities__h2
+            font-family: $fontSecundaria
+            font-weight: 400 
+            font-size: 1.875em
+            line-height: 30px 
+            color: $color-tercero
+        div.room-details-amenitie__container
+            border-top: 1px solid rgba(241, 241, 241, 1)
+            display: flex
+            width: 100%
+            margin-top: 10px
+            padding: 10px
+            padding-top: 30px
+            justify-content: space-between
+            div.room-details-amenities__icon-container
+                display: flex
+                flex-direction: column
+                width: 100% 
+                div.room-details-amenities-icon-container__info
+                    display: flex
+                    margin-bottom: 20px
+                    img.room-details-amenities-icon-container-info__img
+                        margin-right: 10px
+                    p.room-details-amenities-icon-container-info__paraph
+                        font-family: $fontRoboto
+                        font-weight: 500 
+                        font-size: 0.9375em
+                        line-height: 18px
+                        color: rgba(119, 119, 119, 1)
+            div.room-details-amenities__icon-container.container__2 
+                padding-left: 25px
+            
+                
+@media screen and (min-width: 1000px)
+    main 
+        section.room-details__amenities
+            width: 100%
+            max-width: 1500px
+            h2.room-details-amenities__h2
+                margin-left: 120px
+            div.room-details-amenitie__container
+                justify-content: center
+                div.room-details-amenities__icon-container
+                    display: flex
+                    flex-direction: column
+                    width: 40% 

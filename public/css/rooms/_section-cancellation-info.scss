@@ -1,0 +1,38 @@
+@import "../utils/_variables.scss";
+
+main {
+  section.cancellation-info {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    h2.cancellation-info__h2 {
+      font-family: $fontSecundaria;
+      font-size: 1.875em;
+      line-height: 30px;
+      color: $color-tercero;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+    p.cancellation-info__paraph {
+      border-top: 1px solid rgba(241, 241, 241, 1);
+      padding-top: 20px;
+      width: 100%;
+      font-family: $fontRoboto;
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 24px;
+      color: rgba(119, 119, 119, 1);
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  main {
+    section.cancellation-info {
+      width: 70%;
+      margin-left: 120px;
+    }
+  }
+};

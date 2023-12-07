@@ -1,0 +1,45 @@
+
+/* METER EN EL ARCHIVO _BASE */
+@import "utils/base";
+@import "utils/mixins";
+
+@import "home/header";
+@import "home/footer";
+
+@import "home/images-food-slider";
+
+/* HOME STYLES */   
+@import "home/section-banner";
+@import "home/section-banner-date";
+@import "home/section-discover";
+@import "home/section-meet-video";
+@import "home/section-facilities";
+@import "home/section-menu";
+@import "home/images-food-slider";
+@import "home/section-logros";
+
+/* ABOUT US STYLES */
+@import "about_us/section-about-us-banner";
+@import "about_us/section-video-about-presentation";
+@import "about_us/section-restaurant";
+@import "about_us/section-facilities-about-us";
+@import "about_us/section-counter";
+
+/* ROOMS STYLES */
+@import "rooms/section-rooms-banner";
+@import "rooms/section-rooms-list";
+@import "rooms/section-rooms-details-banner";
+@import "rooms/section-room-details-type";
+@import "rooms/section-room-details-amenities";
+@import "rooms/founder";
+@import "rooms/section-cancellation-info";
+@import "rooms/section-related-rooms";
+
+/* OFFERS STYLES */
+@import "offers/section-luxury-rooms-offers";
+@import "offers/section-popular-rooms";
+
+/* CONTACT STYLES */
+@import "contact/contact-info";
+@import "contact/mapa-hotel";
+@import "contact/contact-form-container";

@@ -1,0 +1,476 @@
+@import "../utils/variables";
+
+main {
+    section.discover {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 60px;
+      div.discover__titlebox {
+        width: 100%;
+        height: auto;
+        background: rgba(249, 249, 249, 1);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 120px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+        h2.discover-titlebox__about {
+          width: 100%;
+          background: none;
+          font-size: 0.875em;
+          color: rgba(119, 119, 119, 1);
+          font-family: $fontPrincipal;
+          letter-spacing: 2.8px;
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: 18px;
+          margin: auto;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          max-width: 600px;
+        }
+        h4.discover-titlebox__title {
+          width: 100%;
+          background: none;
+          font-family: $fontSecundaria;
+          font-weight: 400;
+          font-size: 3.5em;
+          line-height: 60px;
+          letter-spacing: -1.2px;
+          color: rgba(17, 17, 17, 1);
+          margin: auto;
+          margin-bottom: 20px;
+          max-width: 600px;
+        }
+        p.discover-titlebox__paraph {
+          width: 100%;
+          font-family: $fontPrincipal;
+          background: none;
+          font-size: 0.9em;
+          color: rgba(119, 119, 119, 1);
+          margin: auto;
+          margin-bottom: 30px;
+          line-height: 25px;
+          max-width: 600px;
+        }
+        button.discover-titlebox__button {
+          background: rgba(189, 172, 141, 1);
+          border: none;
+          width: 65%;
+          max-width: 600px;
+          margin: auto;
+          padding: 20px;
+          cursor: pointer;
+          color: $color-principal;
+          font-size: 0.875em;
+          letter-spacing: 2.8px;
+          text-transform: uppercase;
+          font-family: $fontPrincipal;
+          font-weight: 700;
+          margin-bottom: 40px;
+          transition: 0.5s;
+          border: 2px solid rgba(190, 173, 142, 1);
+
+          &:hover {
+            background-color: rgba(51, 51, 51, 1);
+            border: 2px solid gray;
+          }
+        }
+      }
+      div.discover-strong-team {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        height: 500px;
+        background: $color-principal;
+        align-items: center;
+        margin-bottom: 40px;
+        div.discover-strong-team__box {
+          height: auto;
+          width: 75%;
+          background: none;
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+          margin-bottom: 40px;
+          position: relative;
+          top: -40px;
+          div.discover-strong-team__img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img.discover-strong-team-img__imgcover {
+              width: 100%;
+              height: 300px;
+            }
+          }
+          div.discover-strong-team__description {
+            width: 85%;
+            height: auto;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('/img/team-nocolor.png');
+            background-position: top right;
+            background-repeat: no-repeat;
+            h4.discover-strong-team-description__title {
+              font-family: $fontSecundaria;
+              font-size: 1.875em;
+              font-weight: 400;
+              letter-spacing: -0.9px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              background: none;
+            }
+            p.discover-strong-team-description__paraph {
+              width: 80%;
+              font-family: $fontRoboto;
+              font-weight: 400;
+              font-size: 0.875em;
+              text-align: center;
+              margin-bottom: 40px;
+              line-height: 25px;
+              background: none;
+            }
+          }
+        }
+      }
+      div.discover-luxury-room {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        height: auto;
+        background: $color-principal;
+        align-items: center;
+        div.discover-luxury-room__box {
+          height: auto;
+          width: 75%;
+          background: none;
+          margin-bottom: 40px;
+          color: $color-principal;
+          background: $color-tercero;
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+          div.discover-luxury-room__img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: none;
+            img.discover-luxury-room-img__imgcover {
+              width: 100%;
+              height: 300px;
+            }
+          }
+          div.discover-luxury-room__description {
+            width: 85%;
+            height: auto;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: none;
+            img.discover-luxury-room-description__team-img {
+              background: none;
+            }
+            h4.discover-luxury-room-description__title {
+              font-family: $fontSecundaria;
+              font-size: 1.875em;
+              font-weight: 400;
+              letter-spacing: -0.9px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              background: none;
+              background: none;
+            }
+            p.discover-luxury-room-description__paraph {
+              width: 80%;
+              font-family: $fontRoboto;
+              font-weight: 400;
+              font-size: 0.875em;
+              text-align: center;
+              margin-bottom: 40px;
+              line-height: 25px;
+              background: none;
+            }
+          }
+        }
+      }
+      div.discover-rooms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        max-width: 650px;
+        margin-bottom: 50px;
+        h2.discover-rooms__h2 {
+          background: none;
+          font-size: 0.875em;
+          color: rgba(119, 119, 119, 1);
+          font-family: $fontPrincipal;
+          letter-spacing: 2.8px;
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: 18px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+        }
+        h4.discover-rooms__h4 {
+          font-size: 3.5em;
+          font-family: $fontSecundaria;
+          letter-spacing: -1.2px;
+          line-height: 60px;
+          font-weight: 400;
+          color: $color-tercero;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        div.discover-rooms__icons {
+          width: 70%;
+          background: $color-principal;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 10px;
+          position: relative;
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+          border-radius: 10px;
+          top: 20px;
+          z-index: 2;
+          img.discover-rooms-icons__img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        div#swipper-rooms {
+          width: 100%;
+          height: auto;
+          img.swiper-slide__img {
+            width: 100%;
+            height: 270px;
+            z-index: -3;
+          }
+          div#swiper-button-prev-rooms {
+            background: $color-principal;
+            width: 32px;
+            height: 32px;
+            font-size: 10px;
+            color: $color-tercero;
+            top: 27%;
+          }
+          div#swiper-button-prev-rooms::after,
+          .swiper-rtl #swiper-button-prev-rooms::after {
+            content: 'prev';
+            font-size: 1.1em;
+          }
+          div#swiper-button-prev-rooms:hover {
+            background: $color-secundario;
+            color: $color-principal;
+          }
+          div#swiper-button-next-rooms {
+            background: $color-principal;
+            width: 32px;
+            height: 32px;
+            font-size: 10px;
+            color: $color-tercero;
+            top: 27%;
+          }
+          div#swiper-button-next-rooms::after,
+          .swiper-rtl #swiper-button-next-rooms::after {
+            content: 'next';
+            font-size: 1.1em;
+          }
+          div#swiper-button-next-rooms:hover {
+            background: $color-secundario;
+            color: $color-principal;
+          }
+        }
+        div.discover-rooms__minimal {
+          width: 85%;
+          background: $color-principal;
+          position: relative;
+          top: -20px;
+          z-index: 2;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 0 auto;
+          text-align: center;
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+          border-radius: 6px;
+          h3.discover-rooms-minimal__h3 {
+            font-family: $fontSecundaria;
+            font-weight: 400;
+            font-size: 1.75em;
+            line-height: 36px;
+            letter-spacing: -1.2px;
+            color: $color-tercero;
+            margin-bottom: 20px;
+          }
+          p.discover-rooms-minimal__paraph {
+            font-family: $fontRoboto;
+            font-weight: 400;
+            color: rgba(119, 119, 119, 1);
+            font-size: 0.875em;
+            text-align: center;
+            line-height: 24px;
+            margin-bottom: 20px;
+          }
+          h2.discover-rooms-minimal__h2 {
+            font-family: $fontPrincipal;
+            font-weight: 700;
+            font-size: 2em;
+            color: rgba(190, 173, 142, 1);
+            line-height: 43px;
+            span.discover-rooms-minimal-h2__span {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    main {
+      section.discover {
+        margin-top: 90px;
+        div.discover-container {
+          display: flex;
+          flex-direction: row-reverse;
+          margin-bottom: 80px;
+          div.discover__titlebox {
+            margin-right: 50px;
+            margin-bottom: 50px;
+            width: 80%;
+            padding-bottom: 0;
+
+            button.discover-titlebox__button {
+              width: 50%;
+              margin-bottom: 40px;
+            }
+          }
+          div.discover-container__strong-luxury {
+            background: rgba(249, 249, 249, 1);
+            div.discover-strong-team {
+              height: 300px;
+              margin: 0px;
+              div.discover-strong-team__box {
+                display: flex;
+                flex-direction: row-reverse;
+                height: auto;
+                width: 85%;
+                div.discover-strong-team__img {
+                  width: 100%;
+                  height: 300px;
+                  img.discover-strong-team-img__imgcover {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                div.discover-strong-team__description {
+                  margin-right: 20px;
+                }
+              }
+            }
+            div.discover-luxury-room {
+              height: 300px;
+              margin: 0px;
+              div.discover-luxury-room__box {
+                display: flex;
+                flex-direction: row-reverse;
+                height: auto;
+                width: 85%;
+                div.discover-luxury-room__img {
+                  width: 100%;
+                  height: 100%;
+                  img.discover-luxury-room-img__imgcover {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                div.discover-luxury-room__description {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+        }
+        div.discover-rooms {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          margin: auto;
+          margin-bottom: 80px;
+          max-width: 100%;
+          div.discover-rooms__icons {
+            width: 30%;
+            justify-content: space-around;
+            img.discover-rooms-icons__img {
+              width: 20px;
+              height: 15px;
+            }
+          }
+          div#swipper-rooms {
+            width: 100%;
+            height: auto;
+            div.swiper-slide {
+              opacity: 0.4;
+              transition: .7s;
+            }
+            div.swiper-slide-active {
+              opacity: 1;
+            }
+            img.swiper-slide__img {
+              height: 550px;
+            }
+            div#swiper-button-prev-rooms {
+              width: 80px;
+              height: 80px;
+            }
+            div#swiper-button-prev-rooms::after,
+            .swiper-rtl #swiper-button-prev-rooms::after {
+              font-size: 2em;
+            }
+            div#swiper-button-next-rooms {
+              width: 80px;
+              height: 80px;
+            }
+            div#swiper-button-next-rooms::after,
+            .swiper-rtl #swiper-button-next-rooms::after {
+              font-size: 2em;
+            }
+          }
+          div.discover-rooms__minimal {
+            width: 55%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 auto;
+            div.discover-rooms-minimal__info-container {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              p.discover-rooms-minimal__paraph {
+                text-align: left;
+                width: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  };

@@ -1,0 +1,34 @@
+@import "../variables"
+
+main
+    div.swiper-images-food-slider
+        width: 100%
+        padding: 10px
+        margin-bottom: 50px
+        div.swiper-images-food__container
+            width: 100%
+            height: 335px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            img.swiper-images-food-container__img
+                margin: 0 auto
+                width: 335px
+                height: 335px
+                margin-bottom: 40px
+    div.images-food__slider-desktop
+        display: none
+        
+@media screen and (min-width: 1000px)
+    main
+        div.images-food__slider-desktop
+            display: flex
+            justify-content: space-around
+            margin-bottom: 30px
+            img.swiper-images-food-container__img
+                width: 330px
+                height: 330px
+                margin-bottom: 40px
+        div.images-food__slider
+            display: none

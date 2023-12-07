@@ -1,0 +1,198 @@
+@import "../variables"
+
+main
+    section.related-rooms
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin: auto
+        margin-top: 50px
+        align-items: center
+        max-width: 700px
+        h2.related-rooms__h2
+            align-self: flex-start
+            padding-left: 20px
+            font-family: $fontSecundaria
+            font-weight: 400
+            font-size: 1.875em
+            line-height: 30px
+            color: $color-tercero
+            margin-bottom: 10px
+        div.rooms-list__room
+            width: 90%
+            height: auto
+            display: flex
+            flex-direction: column
+            align-items: center
+            border-top: 1px solid rgba(241, 241, 241, 1)
+            div#swiper-rooms-details
+                width: 100%
+                height: auto
+                margin-bottom: 50px
+                img.swiper-slide__img
+                    width: 100%
+                    height: 270px
+                    z-index: -3
+                div#swiper-button-prev-rooms-details
+                    background: $color-principal
+                    width: 32px
+                    height: 32px
+                    font-size: 10px
+                    color: $color-tercero
+                    top: 180px
+                div#swiper-button-prev-rooms-details::after, .swiper-rtl #swiper-button-prev-rooms-details::after
+                    content: 'prev'
+                    font-size: 1.1em
+                div#swiper-button-prev-rooms-details:hover
+                    background: $color-secundario
+                    color: $color-principal
+                div#swiper-button-next-rooms-details
+                    background: $color-principal
+                    width: 32px
+                    height: 32px
+                    font-size: 10px
+                    color: $color-tercero
+                    top: 180px
+                div#swiper-button-next-rooms-details::after, .swiper-rtl #swiper-button-next-rooms-details::after
+                    content: 'next'
+                    font-size: 1.1em
+                div#swiper-button-next-rooms-details:hover
+                    background: $color-secundario
+                    color: $color-principal
+                div.discover-rooms__icons
+                    width: 80%
+                    background: $color-principal
+                    display: flex
+                    justify-content: space-evenly
+                    padding: 10px
+                    position: relative
+                    z-index: 2
+                    top: 285px
+                    transform: translateX(12%)
+                    box-shadow: 0 8px 16px 0 rgba(138, 138, 138, 0.05)
+                    img.discover-rooms-icons__img
+                        width: 15px
+                        height: 15px
+                div.box-container
+                    display: flex
+                    flex-direction: column
+                    margin-top: 30px
+                    align-items: center
+                    h3.rooms-list-room__h3
+                        font-family: $fontSecundaria
+                        font-weight: 400
+                        font-size: 1.5em
+                        line-height: 24px
+                        letter-spacing: -0.72px
+                        color: $color-tercero
+                        margin-bottom: 20px
+                        background: none
+                    p.rooms-list-room__paraph
+                        font-family: $fontRoboto
+                        font-size: 0.875em
+                        line-height: 24px
+                        text-align: center
+                        color: rgba(119, 119, 119, 1)
+                        width: 85%
+                        margin-bottom: 20px
+                        background: none
+                    div.rooms-list-room__price-info
+                        display: flex
+                        width: 60%
+                        justify-content: space-between
+                        h2.rooms-list-room-price-info__h2
+                            font-family: $fontPrincipal
+                            font-weight: 700
+                            font-size: 1em
+                            color: rgba(190, 173, 142, 1)
+                            line-height: 18px
+                        button.rooms-list-room-price-info__button
+                            cursor: pointer
+                            font-family: $fontPrincipal
+                            font-weight: 700
+                            font-size: 1em
+                            line-height: 18px
+                            color: rgba(189, 189, 189, 1)
+                            border: none
+
+@media screen and (min-width: 1000px)
+    main 
+        margin-bottom: 0px
+        section.related-rooms
+            margin-bottom: 0px
+            max-width: 1400px
+            h2.related-rooms__h2
+                margin-left: 80px
+            div.rooms-list__room
+                width: 80%
+                div.swiper-wrapper__rooms-details
+                    width: 100%
+                    height: auto
+                    margin-bottom: 50px
+                    display: flex
+                    justify-content: space-around
+                    div.swiper-slide
+                        width: 45%
+                    img.swiper-slide__img
+                        width: 100%
+                        height: 370px
+                        z-index: -3
+                    div.discover-rooms__icons
+                        width: 80%
+                        background: $color-principal
+                        display: flex
+                        justify-content: space-evenly
+                        padding: 10px
+                        position: relative
+                        z-index: 2
+                        bottom: -390px
+                        right: -30px
+                        box-shadow: 0 8px 16px 0 rgba(138, 138, 138, 0.05)
+                        img.discover-rooms-icons__img
+                            width: 15px
+                            height: 15px
+                    div.box-container
+                        display: flex
+                        flex-direction: column
+                        margin-top: 30px
+                        align-items: center
+                        h3.rooms-list-room__h3
+                            font-family: $fontSecundaria
+                            font-weight: 400
+                            font-size: 1.5em
+                            line-height: 24px
+                            letter-spacing: -0.72px
+                            color: $color-tercero
+                            margin-bottom: 20px
+                            background: none
+                        p.rooms-list-room__paraph
+                            font-family: $fontRoboto
+                            font-size: 0.875em
+                            line-height: 24px
+                            text-align: center
+                            color: rgba(119, 119, 119, 1)
+                            width: 85%
+                            margin-bottom: 20px
+                            background: none
+                        div.rooms-list-room__price-info
+                            display: flex
+                            width: 60%
+                            justify-content: space-between
+                            h2.rooms-list-room-price-info__h2
+                                font-family: $fontPrincipal
+                                font-weight: 700
+                                font-size: 1em
+                                color: rgba(190, 173, 142, 1)
+                                line-height: 18px
+                            button.rooms-list-room-price-info__button
+                                cursor: pointer
+                                font-family: $fontPrincipal
+                                font-weight: 700
+                                font-size: 1em
+                                line-height: 18px
+                                color: rgba(189, 189, 189, 1)
+                                border: none
+                div#swiper-button-prev-rooms-details
+                    display: none
+                div#swiper-button-next-rooms-details
+                    display: none

@@ -1,0 +1,107 @@
+@import "../utils/variables";
+
+main
+    padding-top: 85px
+    display: flex
+    flex-direction: column
+    height: auto
+    width: 100%
+    height: auto
+    background: $color-principal
+    section.banner
+        background: rgba(51, 51, 51, 1)
+        color: $color-principal
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 10px
+        div.banner__container
+            background: none
+            max-width: 600px
+            margin: auto
+            h2.banner__firstitle
+                background: rgba(51, 51, 51, 1)
+                width: 80%
+                font-family: $fontPrincipal
+                line-height: 18px
+                letter-spacing: 2.8px
+                font-size: 0.8em
+                margin-top: 60px
+            h3.banner__secondtitle
+                background: rgba(51, 51, 51, 1)
+                font-family: $fontSecundaria
+                line-height: 60px
+                letter-spacing: -1.2px
+                font-weight: 400
+                font-size: 3.5em
+                width: 100%
+                margin-top: 40px
+            div.banner__buttons
+                background: rgba(51, 51, 51, 1)
+                display: flex
+                flex-direction: column
+                height: auto
+                width: 100%
+                button
+                    width: 60%
+                    padding: 20px
+                    cursor: pointer
+                    border: none
+                    color: $color-principal
+                    font-size: 0.875em
+                    letter-spacing: 2.8px
+                    text-transform: uppercase
+                    font-family: $fontPrincipal
+                    font-weight: 700
+                button.banner-buttons__tour
+                    background: rgba(190, 173, 142, 1)
+                    margin-bottom: 20px
+                    margin-top: 40px
+                button.banner-buttons__more
+                    background: none
+                    border: 2px solid gray
+                    margin-bottom: 60px
+
+@media screen and (min-width: 1000px)
+    main
+        padding-top: 0px
+        section.banner
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            padding: 10px
+            width: 100%
+            margin-top: 50px
+            padding-left: 180px
+            div.banner__container
+                max-width: 1300px 
+                h2.banner__firstitle
+                    width: 50%
+                    margin-top: 160px
+                    margin-left: 10px
+                h3.banner__secondtitle
+                    width: 70%
+                    margin-top: 40px
+                    font-size: 100px
+                    letter-spacing: -3.6px
+                    line-height: 100px
+                div.banner__buttons
+                    display: flex
+                    flex-direction: row
+                    height: auto
+                    align-items: center
+                    width: 55%
+                    margin-top: 30px
+                    margin-bottom: 70px
+                    button
+                        width: 40%
+                    button.banner-buttons__tour
+                        background: rgba(190, 173, 142, 1)
+                        margin-bottom: 0px
+                        margin-top: 0px
+                        margin-right: 40px
+                    button.banner-buttons__more
+                        margin-bottom: 0px
+                        border: 1px solid gray
+

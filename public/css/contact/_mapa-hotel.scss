@@ -1,0 +1,27 @@
+main {
+  div.mapa-hotel {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 60px;
+    max-width: 600px;
+    iframe.mapa-hotel__iframe {
+      width: 90%;
+      height: 200px;
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  main {
+    div.mapa-hotel {
+      width: 100%;
+      text-align: center;
+      margin-top: 60px;
+      max-width: 1300px;
+      iframe.mapa-hotel__iframe {
+        width: 80%;
+        height: 700px;
+      }
+    }
+  }
+};

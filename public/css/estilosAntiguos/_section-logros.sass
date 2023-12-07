@@ -1,0 +1,46 @@
+@import "../utils/variables";
+
+main
+    section.logros-icon
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        margin-top: 20px
+        height: auto
+        padding: 30px
+        background: $color-tercero
+        div.logros-icon__container
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            background: $color-tercero
+            margin-bottom: 40px
+            img.logros-icon-container__img
+                background: none
+                margin-top: 30px
+                margin-bottom: 20px
+            h2.logros-icon-container-description__h2
+                display: flex
+                flex-direction: column
+                align-items: center
+                font-size: 3.75em
+                font-family: $fontRoboto
+                font-weight: 700 
+                line-height: 82px
+                color: $color-principal
+            span.logros-icon-container-description__span
+                background: none
+                font-family: $fontRoboto
+                font-size: 16px
+                color: rgba(153, 153, 153, 1)
+                line-height: 22px
+                font-weight: 700
+@media screen and (min-width: 1000px)
+    main
+        section.logros-icon
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between

@@ -1,0 +1,276 @@
+@import "../utils/_variables.scss";
+
+main {
+  section.popular-rooms {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-tercero;
+    height: auto;
+    h2.popular-rooms__h2 {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      font-family: $fontPrincipal;
+      font-size: 0.875em;
+      line-height: 16px;
+      letter-spacing: 2.8px;
+      color: rgba(189, 172, 141, 1);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    h3.popular-rooms__h3 {
+      margin-bottom: 50px;
+      font-size: $fontSecundaria;
+      font-weight: 400;
+      font-size: 2.5em;
+      line-height: 48px;
+      letter-spacing: -0.8px;
+      color: $color-principal;
+    }
+    div.rooms-list__room {
+      width: 90%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+      background: none;
+      div#swipper-rooms-offers {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 50px;
+        max-width: 600px;
+        img.swiper-slide__img {
+          width: 100%;
+          height: 270px;
+          z-index: -3;
+        }
+        div.swiper-slide {
+          padding-bottom: 15px;
+          box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+          border-radius: 6px;
+          height: auto;
+        }
+        div#swiper-button-prev-rooms-offers {
+          background: $color-principal;
+          width: 32px;
+          height: 32px;
+          font-size: 10px;
+          color: $color-tercero;
+          top: 180px;
+        }
+        div#swiper-button-prev-rooms-offers::after,
+        .swiper-rtl #swiper-button-prev-rooms-offers::after {
+          content: 'prev';
+          font-size: 1.1em;
+        }
+        div#swiper-button-prev-rooms-offers:hover {
+          background: $color-secundario;
+          color: $color-principal;
+        }
+        div#swiper-button-next-rooms-offers {
+          background: $color-principal;
+          width: 32px;
+          height: 32px;
+          font-size: 10px;
+          color: $color-tercero;
+          top: 180px;
+        }
+        div#swiper-button-next-rooms-offers::after,
+        .swiper-rtl #swiper-button-next-rooms-offers::after {
+          content: 'next';
+          font-size: 1.1em;
+        }
+        div#swiper-button-next-rooms-offers:hover {
+          background: $color-secundario;
+          color: $color-principal;
+        }
+        div.discover-rooms__icons {
+          width: 80%;
+          background: $color-principal;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 10px;
+          position: absolute;
+          z-index: 2;
+          top: 49%;
+          transform: translateX(12%);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+          border-radius: 10px;
+          img.discover-rooms-icons__img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        div.box-container {
+          display: flex;
+          flex-direction: column;
+          margin-top: 30px;
+          align-items: center;
+          padding: 10px;
+          h3.rooms-list-room__h3 {
+            font-family: $fontSecundaria;
+            font-weight: 400;
+            font-size: 1.5em;
+            line-height: 24px;
+            letter-spacing: -0.72px;
+            color: $color-tercero;
+            margin-bottom: 20px;
+            background: none;
+          }
+          p.rooms-list-room__paraph {
+            font-family: $fontRoboto;
+            font-size: 0.875em;
+            line-height: 24px;
+            text-align: center;
+            color: rgba(119, 119, 119, 1);
+            width: 85%;
+            margin-bottom: 20px;
+            background: none;
+          }
+          div.rooms-list-room__price-info {
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+
+            h2.rooms-list-room-price-info__h2 {
+              font-family: $fontPrincipal;
+              font-weight: 700;
+              font-size: 1em;
+              color: rgba(190, 173, 142, 1);
+              line-height: 18px;
+            }
+            button.rooms-list-room-price-info__button {
+              cursor: pointer;
+              font-family: $fontPrincipal;
+              font-weight: 700;
+              font-size: 1em;
+              line-height: 18px;
+              color: rgba(189, 189, 189, 1);
+              border: none;
+              transition: 0.5s;
+              border: 2px solid rgba(190, 173, 142, 1);
+
+              a {
+                color: rgba(189, 189, 189, 1);
+                background: none;
+                transition: 0.3s;
+
+                &:hover {
+                  color: rgba(190, 173, 142, 1);
+                  border-bottom: 2px solid rgba(190, 173, 142, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  main {
+    section.popular-rooms {
+      div.rooms-list__room {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div#swipper-rooms-offers {
+          max-width: 1300px;
+          background: none;
+          div.swiper-wrapper__rooms-offers {
+            display: flex;
+            justify-content: space-around;
+            background: none;
+          }
+          div.swiper-slide {
+            width: 370px;
+            margin: 0px 10px;
+            position: relative;
+            img.swiper-slide__img {
+              width: 100%;
+              height: 240px;
+            }
+            div.discover-rooms__icons {
+              width: 80%;
+              background: $color-principal;
+              display: flex;
+              justify-content: space-evenly;
+              padding: 10px;
+              position: absolute;
+              z-index: 2;
+              transform: translateX(12%);
+              box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+              top: 46%;
+              img.discover-rooms-icons__img {
+                width: 15px;
+                height: 15px;
+              }
+            }
+            div.box-container {
+              display: flex;
+              flex-direction: column;
+              margin-top: 0px;
+              align-items: center;
+              padding: 20px;
+              h3.rooms-list-room__h3 {
+                font-family: $fontSecundaria;
+                font-weight: 400;
+                font-size: 1.5em;
+                line-height: 24px;
+                letter-spacing: -0.72px;
+                color: $color-tercero;
+                margin-bottom: 20px;
+                background: none;
+                text-align: center;
+                margin-top: 20px;
+              }
+              p.rooms-list-room__paraph {
+                font-family: $fontRoboto;
+                font-size: 0.875em;
+                line-height: 24px;
+                text-align: center;
+                color: rgba(119, 119, 119, 1);
+                width: 85%;
+                margin-bottom: 20px;
+                background: none;
+              }
+              div.rooms-list-room__price-info {
+                display: flex;
+                width: 90%;
+                justify-content: space-between;
+                h2.rooms-list-room-price-info__h2 {
+                  font-family: $fontPrincipal;
+                  font-weight: 700;
+                  font-size: 1em;
+                  color: rgba(190, 173, 142, 1);
+                  line-height: 18px;
+                }
+                button.rooms-list-room-price-info__button {
+                  cursor: pointer;
+                  font-family: $fontPrincipal;
+                  font-weight: 700;
+                  font-size: 1em;
+                  line-height: 18px;
+                  color: rgba(189, 189, 189, 1);
+                  border: none;
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+          div#swiper-button-prev-rooms-offers {
+            display: none;
+          }
+          div#swiper-button-next-rooms-offers {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+};

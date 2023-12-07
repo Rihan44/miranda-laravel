@@ -1,0 +1,88 @@
+@import "../variables"
+
+main
+    section.restaurant
+        width: 100%
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-top: 30px
+        div.restaurant__container
+            width: 90%
+            box-shadow: 0 14px 24px 0 rgba(184, 184, 184, 0.1)
+            height: auto
+            max-width: 750px
+            img.restaurant-container__img
+                width: 100%
+                height: 232px
+            div.restaurant-container__info 
+                padding: 10px
+                h2.restaurant-container-info__h2
+                    width: 100%
+                    background: none
+                    font-size: 0.875em
+                    color: rgba(119, 119, 119, 1)
+                    font-family: $fontPrincipal
+                    letter-spacing: 2.8px
+                    font-weight: 700
+                    text-transform: uppercase
+                    line-height: 18px
+                    margin-bottom: 20px
+                    margin-top: 20px
+                h4.restaurant-container-info__h4
+                    width: 100%
+                    background: none
+                    font-family: $fontSecundaria
+                    font-weight: 400
+                    font-size: 2.5em
+                    line-height: 60px
+                    letter-spacing: -1.2px
+                    color: $color-tercero
+                    margin-bottom: 20px
+                p.restaurant-container-info__paraph
+                    width: 100%
+                    font-family: $fontPrincipal
+                    background: none
+                    font-size: 0.9em
+                    color: rgba(119, 119, 119, 1)
+                    margin-bottom: 30px
+                    line-height: 25px
+                button.restaurant-container-info__button
+                    background: rgba(189, 172, 141, 1)
+                    border: none
+                    width: 65%
+                    padding: 20px
+                    cursor: pointer
+                    color: $color-principal
+                    font-size: 0.875em
+                    letter-spacing: 2.8px
+                    text-transform: uppercase
+                    font-family: $fontPrincipal
+                    font-weight: 700
+                    margin-bottom: 10px
+
+@media screen and (min-width: 1000px)
+    main 
+        section.restaurant
+            width: 90%
+            margin: 0 auto
+            margin-bottom: 50px
+            margin-top: 40px
+            div.restaurant__container
+                width: 100%
+                display: flex
+                flex-direction: row
+                max-width: 1300px
+                img.restaurant-container__img
+                    width: 50%
+                    height: auto
+                    margin-right: 20px
+                div.restaurant-container__info 
+                    width: 50%
+                    h4.restaurant-container-info__h4 
+                        width: 70%
+                    p.restaurant-container-info__paraph
+                        width: 80%
+                    button.restaurant-container-info__button
+                        width: 40%

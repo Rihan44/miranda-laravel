@@ -1,0 +1,104 @@
+@import "../utils/variables";
+
+main {
+  section.video-about__presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    iframe.video-about-presentation__iframe {
+      width: 90%;
+      height: 335px;
+      margin-bottom: 30px;
+      max-width: 750px;
+    }
+    h3.video-about-presentation__title {
+      width: 90%;
+      font-family: $fontSecundaria;
+      font-weight: 400;
+      font-size: 2em;
+      letter-spacing: -1.16px;
+      line-height: 40px;
+      text-align: center;
+      color: $color-tercero;
+    }
+    div.video-about-presentation__our-services {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: auto;
+      justify-content: center;
+      margin-top: 50px;
+      div.video-about-presentation-our-services__container {
+        width: 45%;
+        max-width: 170px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h4.video-about-presentation-our-services-container__h4 {
+        font-family: $fontPrincipal;
+        font-weight: 700;
+        line-height: 14px;
+        letter-spacing: 2.4px;
+        font-size: 0.65em;
+        margin-top: 10px;
+        text-transform: uppercase;
+      }
+      img.video-about-presentation-our-services-container__img {
+        background: none;
+      }
+      div.video-about-presentation-our-services__container.plane {
+        background: rgba(190, 173, 142, 1);
+        color: $color-principal;
+        h4.video-about-presentation-our-services-container__h4 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  main {
+    section.video-about__presentation {
+      margin-top: 80px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      iframe.video-about-presentation__iframe {
+        width: 100%;
+        height: 650px;
+        margin-bottom: 50px;
+        max-width: 1000px;
+      }
+      h3.video-about-presentation__title {
+        width: 80%;
+        font-size: 4.5em;
+        letter-spacing: -2.16px;
+        line-height: 89px;
+        font-weight: 400;
+      }
+      div.video-about-presentation__our-services {
+        flex-wrap: nowrap;
+        div.video-about-presentation-our-services__container {
+          width: 25%;
+        }
+        div.video-about-presentation-our-services__container.plane {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+          h4.video-about-presentation-our-services-container__h4 {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+};

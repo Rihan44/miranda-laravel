@@ -1,0 +1,133 @@
+@import "../utils/variables";
+
+main
+    section.meet-video
+        width: 100%
+        height: auto
+        background: $color-tercero
+        display: flex
+        flex-direction: column
+        padding: 20px
+        div.meet-video__container
+            width: 100%
+            background: none
+            margin: auto
+            max-width: 700px
+            h2.meet-video-container__h2
+                font-family: $fontPrincipal
+                font-size: 0.875em
+                color: $color-secundario
+                letter-spacing: 2.8px
+                font-weight: 700
+                background: none
+                text-transform: uppercase
+                margin-bottom: 20px
+                margin-top: 40px
+            h3.meet-video-container__h3
+                font-family: $fontSecundaria
+                font-weight: 400
+                font-size: 3.5em
+                color: $color-principal
+                letter-spacing: -1.2px
+                line-height: 60px
+                margin-bottom: 20px
+            p.meet-video-container__paraph
+                font-family: $fontPrincipal
+                font-weight: 400
+                font-size: 0.875em
+                line-height: 24px
+                color: rgba(194, 194, 194, 1)
+                margin-bottom: 40px
+            button.meet-video-container__button-dektop
+                display: none
+        iframe.meet-video__iframe
+            width: 100%
+            margin: auto
+            max-width: 700px
+            margin-bottom: 40px
+            height: 270px
+        button.meet-video__button
+            width: 60%
+            max-width: 300px
+            padding: 20px
+            margin-bottom: 20px
+            cursor: pointer
+            border: none
+            color: rgba(255, 255, 255, 1)
+            font-size: 0.875em
+            letter-spacing: 2.8px
+            text-transform: uppercase
+            font-family: $fontPrincipal
+            font-weight: 700
+            background: rgba(190, 173, 142, 1)
+            @media screen and ( min-width: 700px )
+                margin: auto
+                margin-bottom: 20px
+        div.meet-video__background-gold-desktop
+            display: none
+@media screen and (min-width: 1000px)
+    main
+        section.meet-video
+            display: flex
+            flex-direction: row
+            padding: 80px
+            position: relative
+            margin-bottom: 20px
+            div.meet-video__container
+                width: 50%
+                background: none
+                margin-right: 40px
+                max-width: 1300px
+                h3.meet-video-container__h3
+                    font-family: $fontPrincipal
+                    font-size: 0.875em
+                    color: $color-secundario
+                    letter-spacing: 2.8px
+                    font-weight: 700
+                    background: none
+                    text-transform: uppercase
+                    margin-bottom: 20px
+                    margin-top: 40px
+                h2.meet-video-container__h2
+                    font-family: $fontSecundaria
+                    font-weight: 400
+                    font-size: 3.5em
+                    color: $color-principal
+                    letter-spacing: -1.2px
+                    line-height: 60px
+                    margin-bottom: 20px
+                p.meet-video-container__paraph
+                    font-family: $fontPrincipal
+                    font-weight: 400
+                    font-size: 0.875em
+                    line-height: 24px
+                    color: rgba(194, 194, 194, 1)
+                    margin-bottom: 40px
+                button.meet-video-container__button-dektop
+                    display: block
+                    width: 40%
+                    padding: 20px
+                    margin-bottom: 20px
+                    cursor: pointer
+                    border: none
+                    color: rgba(255, 255, 255, 1)
+                    font-size: 0.875em
+                    letter-spacing: 2.8px
+                    text-transform: uppercase
+                    font-family: $fontPrincipal
+                    font-weight: 700
+                    background: rgba(190, 173, 142, 1)
+            iframe.meet-video__iframe
+                width: 50%
+                margin-bottom: 40px
+                z-index: 10
+            button.meet-video__button
+                display: none
+            div.meet-video__background-gold-desktop
+                display: block
+                width: 40%
+                height: 100%
+                position: absolute
+                background: rgba(173, 157, 130, 1)
+                top: 0px
+                right: 0px

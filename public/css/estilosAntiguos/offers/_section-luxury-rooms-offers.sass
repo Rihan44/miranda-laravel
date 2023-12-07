@@ -1,0 +1,205 @@
+@import "../variables"
+
+main
+    section.luxury-rooms-offers
+        width: 90%
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin: auto
+        margin-top: 60px
+        max-width: 650px
+        box-shadow: 0 14px 24px 0 rgba(184, 184, 184, 0.1)
+        div.luxury-rooms-offers__container
+            width: 100%
+            h3.luxury-rooms-offers-container__h3
+                font-family: $fontPrincipal
+                font-size: 0.875em
+                line-height: 16px
+                letter-spacing: 2.8px
+                text-transform: uppercase
+                color: rgba(119, 119, 119, 1)
+                padding: 10px
+            h2.luxury-rooms-offers-container__h2
+                font-family: $fontSecundaria
+                font-size: 2.5em
+                line-height: 48px
+                letter-spacing: -1.44px
+                color: $color-tercero
+                font-weight: 400
+                padding: 10px
+                width: 80%
+            p.luxury-rooms-offers-container__paraph
+                padding: 10px
+                font-family: $fontRoboto
+                font-size: 0.875em
+                font-weight: 400
+                color: rgba(119, 119, 119, 1)
+                line-height: 24px
+                margin-bottom: 20px
+            div.luxury-rooms-offers-container__amenities
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 100%
+                margin-top: 10px
+                padding: 10px
+                div.container-icons 
+                    display: flex
+                    width: 90%
+                    div.room-details-amenities__icon-container
+                        display: flex
+                        flex-direction: column
+                        width: 50%
+                        background: none
+                        div.room-details-amenities-icon-container__info
+                            display: flex
+                            margin-bottom: 20px
+                            justify-content: flex-start
+                            img.room-details-amenities-icon-container-info__img
+                                margin-right: 10px
+                            p.room-details-amenities-icon-container-info__paraph
+                                font-family: $fontRoboto
+                                font-weight: 500
+                                font-size: 0.9375em
+                                line-height: 18px
+                                color: rgba(119, 119, 119, 1)
+                    div.room-details-amenities__icon-container.container__2
+                        padding-left: 25px
+        button.luxury-rooms-offers-container__button
+            width: 60%
+            padding: 20px
+            margin-top: 30px
+            margin-bottom: 20px
+            margin-left: 20px
+            cursor: pointer
+            border: none
+            color: $color-principal
+            font-size: 0.875em
+            letter-spacing: 2.8px
+            text-transform: uppercase
+            font-family: $fontPrincipal
+            font-weight: 700
+            background: rgba(190, 173, 142, 1)
+            align-self: baseline
+
+        div.luxury-rooms-offers-container__info-price
+            width: 100%
+            height: 200px
+            position: relative
+            margin-bottom: 10px
+            img.luxury-rooms-offers-container-info-price__img
+                width: 100%
+                height: 100%
+            div.luxury-rooms-offers-container-info-prices__container
+                width: 110px
+                position: relative
+                background: none
+                top: -80px
+                right: -65%
+                display: flex
+                flex-direction: column
+                h4, del, span
+                    background: none
+                h4.luxury-rooms-offers-container-info-price__price-before
+                    font-family: $fontPrincipal
+                    font-weight: 700
+                    font-size: 1.4375em
+                    line-height: 25px
+                    color: rgba(190, 173, 142, 1)
+                    background: none
+                    align-self: flex-end
+                    span
+                        background: none
+                        font-size: 11px
+                h4.luxury-rooms-offers-container-info-price__price-after
+                    font-family: $fontPrincipal
+                    font-size: 1.875em
+                    font-weight: 700
+                    line-height: 33px
+                    color: rgba(222, 87, 119, 1)
+                    span
+                        font-size: 11px
+           
+@media screen and (min-width: 1000px)
+    main 
+       section.luxury-rooms-offers
+            margin-top: 100px
+            max-width: 1400px
+            margin: auto
+            margin-top: 120px
+            box-shadow: none
+            max-width: 1170px
+            div.luxury-rooms-offers__container
+                width: 80%
+                z-index: 2
+                padding: 40px 60px
+                margin-top: 300px
+                border-top: 5px solid rgba(189, 172, 141, 1)
+                display: flex
+                align-items: center
+                justify-content: space-between
+                div.container-info 
+                    width: 100%
+                    h2.luxury-rooms-offers-container__h2
+                        border-bottom: 2px solid rgba(236, 236, 236, 1)
+                        width: 200%
+                        margin-bottom: 36px
+                div.luxury-rooms-offers-container__amenities
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    width: 100%
+                    margin-top: 145px
+                    padding: 10px
+                    div.container-icons 
+                        display: flex
+                        width: 90%
+                        div.room-details-amenities__icon-container
+                            width: 70%
+            button.luxury-rooms-offers-container__button
+                display: block
+                position: relative
+                top: -70px
+                z-index: 2
+                left: 135px
+                width: 25%
+
+            div.luxury-rooms-offers-container__info-price
+                width: 90%
+                height: 200px
+                position: relative
+                margin-bottom: 10px
+                img.luxury-rooms-offers-container-info-price__img
+                    width: 100%
+                    height: 570px
+                div.luxury-rooms-offers-container-info-prices__container
+                    width: 110px
+                    position: relative
+                    background: none
+                    top: -30%
+                    display: flex
+                    flex-direction: column
+                    z-index: 3
+                    transform: translateX(50%) translateY(90%)
+                    h4, del, span
+                        background: none
+                    h4.luxury-rooms-offers-container-info-price__price-before
+                        font-family: $fontPrincipal
+                        font-weight: 700
+                        font-size: 1.4375em
+                        line-height: 25px
+                        color: rgba(190, 173, 142, 1)
+                        background: none
+                        align-self: flex-end
+                        span
+                            background: none
+                            font-size: 11px
+                    h4.luxury-rooms-offers-container-info-price__price-after
+                        font-family: $fontPrincipal
+                        font-size: 1.875em
+                        font-weight: 700
+                        line-height: 33px
+                        color: rgba(222, 87, 119, 1)
+                        span
+                            font-size: 11px

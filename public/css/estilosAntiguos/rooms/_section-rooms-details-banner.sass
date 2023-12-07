@@ -1,0 +1,67 @@
+@import "../variables"
+
+main
+    padding-top: 85px
+    display: flex
+    flex-direction: column
+    height: auto
+    width: 100%
+    height: auto
+    background: $color-principal
+    margin-bottom: 30px
+    section.rooms__banner
+        background: rgba(51, 51, 51, 1)
+        color: $color-principal
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 10px
+        padding-bottom: 0px
+        h2.rooms__firsttitle
+            background: rgba(51, 51, 51, 1)
+            width: 80%
+            font-family: $fontPrincipal
+            line-height: 18px
+            letter-spacing: 2.8px
+            font-size: 0.8em
+            margin-top: 60px
+        h3.rooms__secondtitle
+            background: rgba(51, 51, 51, 1)
+            font-family: $fontSecundaria
+            line-height: 60px
+            letter-spacing: -1.2px
+            font-weight: 400
+            font-size: 3.5em
+            width: 100%
+            margin-top: 40px
+            margin-bottom: 50px
+        div.rooms__buttons
+            background: $color-principal
+            display: flex
+            height: auto
+            width: 60%
+            position: relative
+            right: -35%
+            height: auto
+            padding: 20px
+            bottom: 0px
+            justify-content: center
+            align-items: center
+            a
+                font-weight: 700
+                font-family: $fontPrincipal
+                font-size: 1em
+                letter-spacing: -0.48px
+                line-height: 18px
+            p
+                color: $color-tercero
+                font-weight: bold
+            a.banner-buttons__home
+                margin-right: 10px
+                color: $color-tercero
+            a.banner-buttons__about
+                margin-left: 10px
+                color: rgba(190, 173, 142, 1)
+@media screen and (min-width: 1000px)
+    main 
+        padding-top: 0px
