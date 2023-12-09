@@ -67,10 +67,9 @@
             </div>
             <div class="contact-form-container-formulario__input-container">
                 <img class="contact-form-container-formulario-input-container__icon" src="/img/gold-phone-icon.png" alt="phone" />
-                <input class="contact-form-container-formulario-input-container__input" type="text" name="number" id="number-input" placeholder="Add phone number" required/>
+                <input class="contact-form-container-formulario-input-container__input" type="text" name="phone" id="number-input" placeholder="Add phone number" required/>
             </div>
         </div>
-
         <div class="inputs-box">
             <div class="contact-form-container-formulario__input-container">
                 <img class="contact-form-container-formulario-input-container__icon" src="/img/email-gold-icon.png" alt="email" />
@@ -78,14 +77,14 @@
             </div>
             <div class="contact-form-container-formulario__input-container">
                 <img class="contact-form-container-formulario-input-container__icon" src="/img/book-gold-icon.png" alt="book" />
-                <input class="contact-form-container-formulario-input-container__input" type="text" name="subject" id="subject-input" placeholder="Enter subject" required/>
+                <input class="contact-form-container-formulario-input-container__input" type="text" name="email_subject" id="subject-input" placeholder="Enter subject" required/>
             </div>
         </div>
 
         <div class="inputs-box">
             <div class="contact-form-container-formulario__input-container">
                 <img class="contact-form-container-formulario-input-container__icon" src="/img/pen-icon.png" alt="pen" />
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter message" class="contact-form-container-formulario-input-container__textarea"></textarea>
+                <textarea name="email_description" id="message" cols="30" rows="10" placeholder="Enter message" class="contact-form-container-formulario-input-container__textarea"></textarea>
             </div>
         </div>
         <button class="contact-form-container-formulario__button">SEND</button>

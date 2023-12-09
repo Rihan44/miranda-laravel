@@ -41,17 +41,21 @@ class RoomController extends Controller
         return view('rooms', compact('rooms'), ['amenity_icons' => $amenity_icons, 'form_sent' => false]);
     }
 
-    public function store(Request $request)
+    public function search_results(Request $request)
     {
         $check_in = htmlspecialchars($request->query('check_in'));
         $check_out = htmlspecialchars($request->query('check_out'));
 
+        /* CAMBIAR ESTO Y ENVIARLO A UN INPUT INVISIBLE */
         Session::put('check_in', $check_in);
         Session::put('check_out', $check_out);
 
-        $room_model = new Room();
-        $rooms = $room_model->request_check($check_in, $check_out);
+        // $room_model = new Room();
+        // $rooms = $room_model->request_check($check_in, $check_out);
 
+        $rooms = Room::request_check($check_in, $check_out);
+
+        /* HACER ESTO EN UN METODO */
         foreach ($rooms as $room) {
             $room->amenities_array = explode(',', $room->amenities);
         }
@@ -75,6 +79,8 @@ class RoomController extends Controller
 
     public function show(string $id)
     {
+
+        /* CAMBIAR ESTO POR RELACIONES Y LO DE TWO ROOMS EN RELATED ROOMS */
         if(Session::has('check_in') && Session::has('check_out')) {
             $check_in = htmlspecialchars(Session::get('check_in'));
             $check_out = htmlspecialchars(Session::get('check_out'));
@@ -105,6 +111,8 @@ class RoomController extends Controller
             Session::put('room_data_id', $room['id']);
             Session::put('room_data_price', $room['price']);
         }
+
+        /* TODO QUITAR LA SESSION Y ENVIARLOL EN EL FORMULARIO CON UN HIDDEN */
 
         return view('rooms_details', ['rooms' => $rooms, 'two_rooms' => $two_rooms, 'form_sent' => false, 'check_in' => $check_in, 'check_out' => $check_out]);
     }

@@ -92,9 +92,24 @@
         </div>
         <div class="swiper" id="swipper-rooms">
             <div class="swiper-wrapper">
-                @foreach ($rooms as $room)
+                <!-- @foreach ($rooms as $room)
                 <div class="swiper-slide slide-img4">
                     <img class="swiper-slide__img" src="{{$room['URL']}}" alt="img{{$room['id']}}" />
+                    <div class="discover-rooms__minimal">
+                        <div class="discover-rooms-minimal__info-container">
+                            <h3 class="discover-rooms-minimal__h3">{{$room['room_type']}}</h3>
+                            <p class="discover-rooms-minimal__paraph">{{$room['description']}}</p>
+                        </div>
+                        <h2 class="discover-rooms-minimal__h2">${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span></h2>
+                    </div>
+                </div>
+                @endforeach -->
+
+                @foreach ($rooms as $room)
+                <div class="swiper-slide slide-img4">
+                    @foreach($room->photos as $photo)
+                        <img class="swiper-slide__img" src="{{$photo->room_photo_url}}" alt="img{{$room->room_type}}" />
+                    @endforeach
                     <div class="discover-rooms__minimal">
                         <div class="discover-rooms-minimal__info-container">
                             <h3 class="discover-rooms-minimal__h3">{{$room['room_type']}}</h3>
