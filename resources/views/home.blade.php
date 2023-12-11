@@ -81,7 +81,7 @@
     <div class="discover-rooms">
         <h2 class="discover-rooms__h2">ROOMS</h2>
         <h4 class="discover-rooms__h4">Hand Picked Rooms</h4>
-        <div class="discover-rooms__icons">
+        <!-- <div class="discover-rooms__icons">
             <img class="discover-rooms-icons__img" src="img/bed-icon.png" alt="bed-icon" />
             <img class="discover-rooms-icons__img" src="img/wifi-icon.png" alt="wifi-icon" />
             <img class="discover-rooms-icons__img" src="img/car-icon.png" alt="car-icon" />
@@ -89,7 +89,7 @@
             <img class="discover-rooms-icons__img" src="img/gym-icon.png" alt="gym-icon" />
             <img class="discover-rooms-icons__img" src="img/no-smoking-icon.png" alt="no-smoking-icon" />
             <img class="discover-rooms-icons__img" src="img/cocktail-icon.png" alt="cocktail-icon" />
-        </div>
+        </div> -->
         <div class="swiper" id="swipper-rooms">
             <div class="swiper-wrapper">
                 <!-- @foreach ($rooms as $room)
@@ -107,9 +107,16 @@
 
                 @foreach ($rooms as $room)
                 <div class="swiper-slide slide-img4">
-                    @foreach($room->photos as $photo)
+                    @foreach($room->first_photo as $photo)
                         <img class="swiper-slide__img" src="{{$photo->room_photo_url}}" alt="img{{$room->room_type}}" />
                     @endforeach
+                    <div class="discover-rooms__icons">
+                        @foreach ($room->amenities_array as $amenity)
+                            @if (isset($amenity_icons[$amenity]))
+                                <img class="discover-rooms-icons__img" src="{{ $amenity_icons[$amenity] }}" alt="{{ $amenity }}" />
+                            @endif
+                        @endforeach
+                    </div>
                     <div class="discover-rooms__minimal">
                         <div class="discover-rooms-minimal__info-container">
                             <h3 class="discover-rooms-minimal__h3">{{$room['room_type']}}</h3>

@@ -19,7 +19,7 @@
 </section>
 
 <section class="room-details__type">
-    @foreach ($rooms as $room)
+    @foreach ($room_detail as $room)
     <div class="room-details-type__info">
         <div class="room-details-type-info__container">
             <h2 class="room-details-type-info__h2">Double Bed</h2>
@@ -54,6 +54,8 @@
             <input type="text" name="phone" id="room-details-type-availability-form__phone" placeholder="Number Phone" required/>
             <label for="message">Message</label>
             <input type="text" name="message" id="room-details-type-availability-form__message" placeholder="Your Message" required/>
+            <input type="hidden" name="room_price" value="{{$room_detail_price}}"/>
+            <input type="hidden" name="room_id" value="{{$room_detail_id}}"/>
             <button 
                 id="room-details-type-availability-form__button" 
                 class="room-details-type-availability-form__button" 
@@ -62,8 +64,8 @@
             </button>
         </form>
     </div>
-    @foreach ($rooms as $room)
-    <p class="room-details-type__paraph">{{$room['description']}}</p>
+    @foreach ($room_detail as $room)
+        <p class="room-details-type__paraph">{{$room['description']}}</p>
     @endforeach
 </section>
 
@@ -168,7 +170,7 @@
 
         <div class="swiper" id="swiper-rooms-details">
             <div class="swiper-wrapper swiper-wrapper__rooms-details">
-                @foreach ($two_rooms as $room)
+                @foreach ($related_rooms as $room)
                 <div class="swiper-slide slide-img1">
                     <div class="discover-rooms__icons">
                         <img class="discover-rooms-icons__img" src="/img/bed-icon.png" alt="bed-icon" />

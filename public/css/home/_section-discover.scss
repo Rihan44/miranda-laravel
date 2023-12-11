@@ -419,6 +419,9 @@ main {
           div.discover-rooms__icons {
             width: 30%;
             justify-content: space-around;
+            top: -20px;
+            margin-bottom: 30px;
+            left: 35%;
             img.discover-rooms-icons__img {
               width: 20px;
               height: 15px;
@@ -435,7 +438,7 @@ main {
               opacity: 1;
             }
             img.swiper-slide__img {
-              height: 550px;
+              height: 500px;
             }
             div#swiper-button-prev-rooms {
               width: 80px;

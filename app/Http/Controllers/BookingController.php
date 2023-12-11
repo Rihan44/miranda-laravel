@@ -11,24 +11,16 @@ class BookingController extends Controller
 {
     public function store(Request $request)
     {
-         $check_in = Session::get('check_in');
-         $check_out = Session::get('check_out');
-         $room_data_id = Session::get('room_data_id');
-         $room_data_price = Session::get('room_data_price');
-         
-         Session::forget('room_data', 'check_in', 'check_out');
-
-            
         $booking = Booking::create([
             'guest' => $request->input('name'),
             'phone_number' => $request->input('phone'),
             'order_date' => now()->toDateTimeString(),
-            'check_in' => $check_in,
-            'check_out' => $check_out,
+            'check_in' => $request->input('check_in'),
+            'check_out' => $request->input('check_out'),
             'special_request' => $request->input('message'),
-            'price' => $room_data_price,
+            'price' => $request->input('room_price'),
             'email' => $request->input('email'),
-            'room_id' => $room_data_id
+            'room_id' => $request->input('room_id')
         ]);
 
 

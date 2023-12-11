@@ -16,8 +16,8 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/rooms', [RoomController::class, 'index']);
 Route::get('/rooms-request', [RoomController::class, 'search_results']);
-Route::get('/rooms-details/{id}', [RoomController::class, 'show']);
-Route::post('/rooms-details/{id}', [BookingController::class, 'store']);
+Route::get('/rooms_details/{id}', [RoomController::class, 'show']);
+Route::post('/rooms_details/{id}', [BookingController::class, 'store']);
 
 Route::get('/offers', [OfferController::class, 'index']);
 

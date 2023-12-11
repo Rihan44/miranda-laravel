@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\RoomPhoto;
+use App\Models\Amenity;
 use Illuminate\Database\Query\Builder;
 
 class Room extends Model
@@ -18,9 +19,18 @@ class Room extends Model
     //     return $this->hasMany(Amenitie::class);
     // }
 
+    public function amenities(): BelongsToMany
+    {
+        return $this->belongsToMany(Amenity::class, 'amenity_to_room');
+    }
+
     public function photos(): HasMany 
     {
         return $this->hasMany(RoomPhoto::class);
+    }
+
+    public function first_photo() {
+        return $this->photos()->take(1);
     }
 
     public static function amenities_array($rooms) 
@@ -46,7 +56,7 @@ class Room extends Model
         return $amenity_icons;
     }
 
-    public function request_check($check_in, $check_out) 
+    public static function request_check($check_in, $check_out) 
     {
         $rooms = Room::select('rooms.*')
             ->leftJoin('room_photos', 'rooms.id', '=', 'room_photos.room_id')
@@ -69,25 +79,6 @@ class Room extends Model
             ->groupBy('rooms.id')
             ->get();
 
-            /* TODO DEVOLVER ESTO EN UN OBJETO */
-
-            // foreach ($rooms as $room) {
-            //     $room->amenities_array = explode(',', $room->amenities);
-            // }
-    
-            // $amenity_icons = [
-            //     'Bed Space' => '/img/bed-icon.png',
-            //     '24-Hour Guard' => '/img/gym-icon.png',
-            //     'Free Wifi' => '/img/wifi-icon.png',
-            //     'Air Conditioner' => '/img/cold-icon.png',
-            //     'Television' => '/img/bed-icon.png',
-            //     'Towels' => '/img/no-smoking-icon.png',
-            //     'Mini Bar' => '/img/cocktail-icon.png',
-            //     'Coffee Set' => '/img/bed-icon.png',
-            //     'Bathtub' => '/img/bed-icon.png',
-            //     'Jacuzzi' => '/img/bed-icon.png',
-            //     'Nice Views' => '/img/bed-icon.png',
-            // ];
         return $rooms;
     }
  

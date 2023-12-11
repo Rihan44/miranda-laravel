@@ -1352,6 +1352,9 @@ main section.discover div.discover-rooms div.discover-rooms__minimal h2.discover
   main section.discover div.discover-rooms div.discover-rooms__icons {
     width: 30%;
     justify-content: space-around;
+    top: -20px;
+    margin-bottom: 30px;
+    left: 35%;
   }
   main section.discover div.discover-rooms div.discover-rooms__icons img.discover-rooms-icons__img {
     width: 20px;
@@ -1369,7 +1372,7 @@ main section.discover div.discover-rooms div.discover-rooms__minimal h2.discover
     opacity: 1;
   }
   main section.discover div.discover-rooms div#swipper-rooms img.swiper-slide__img {
-    height: 550px;
+    height: 500px;
   }
   main section.discover div.discover-rooms div#swipper-rooms div#swiper-button-prev-rooms {
     width: 80px;

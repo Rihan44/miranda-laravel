@@ -57,7 +57,11 @@
                         <div class="rooms-list-room__price-info">
                             <h2 class="rooms-list-room-price-info__h2">${{$room['price']}}/Night</h2>
                             <button class="rooms-list-room-price-info__button">
-                                <a href="rooms_details/{{$room['id']}}">Booking now</a>
+                                @if($check_in !== '' && $check_out !== '')
+                                    <a href="rooms_details/{{$room['id']}}?check_in={{$check_in}}&check_out={{$check_out}}">Booking now</a>
+                                @else 
+                                    <a href="rooms_details/{{$room['id']}}">Booking now</a>
+                                @endif
                             </button>
                         </div>
                     </div>
