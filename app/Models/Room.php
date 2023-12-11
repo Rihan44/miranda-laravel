@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\RoomPhoto;
 use App\Models\Amenity;
 use Illuminate\Database\Query\Builder;
@@ -13,11 +14,6 @@ use Illuminate\Database\Query\Builder;
 class Room extends Model
 {
     use HasFactory;
-
-    // public function amenities(): HasMany 
-    // {
-    //     return $this->hasMany(Amenitie::class);
-    // }
 
     public function amenities(): BelongsToMany
     {
@@ -31,29 +27,6 @@ class Room extends Model
 
     public function first_photo() {
         return $this->photos()->take(1);
-    }
-
-    public static function amenities_array($rooms) 
-    {
-        foreach ($rooms as $room) {
-            $room->amenities_array = explode(',', $room->amenities);
-        }
-
-       $amenity_icons = [
-            'Bed Space' => '/img/bed-icon.png',
-            '24-Hour Guard' => '/img/gym-icon.png',
-            'Free Wifi' => '/img/wifi-icon.png',
-            'Air Conditioner' => '/img/cold-icon.png',
-            'Television' => '/img/bed-icon.png',
-            'Towels' => '/img/no-smoking-icon.png',
-            'Mini Bar' => '/img/cocktail-icon.png',
-            'Coffee Set' => '/img/bed-icon.png',
-            'Bathtub' => '/img/bed-icon.png',
-            'Jacuzzi' => '/img/bed-icon.png',
-            'Nice Views' => '/img/bed-icon.png',
-        ];
-
-        return $amenity_icons;
     }
 
     public static function request_check($check_in, $check_out) 

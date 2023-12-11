@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\Amenity;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,14 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $rooms = Room::select('rooms.*')
-        ->leftJoin('amenity_to_room', 'rooms.id', 'amenity_to_room.room_id')
-        ->leftJoin('amenities', 'amenity_to_room.amenity_id', 'amenities.id')
-        ->selectRaw('GROUP_CONCAT(DISTINCT amenities.amenity_name) AS amenities')
-        ->groupBy('rooms.id')
-        ->get();
+        $rooms = Room::all();
 
-       $amenity_icons = Room::amenities_array($rooms);
+        $amenity_icons = Amenity::getIcon($rooms);
 
         return view('home', ['rooms' => $rooms,'amenity_icons' => $amenity_icons, 'form_sent' => false]);
     }
