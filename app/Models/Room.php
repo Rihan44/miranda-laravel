@@ -32,11 +32,6 @@ class Room extends Model
     public static function request_check($check_in, $check_out) 
     {
         $rooms = Room::select('rooms.*')
-            ->leftJoin('room_photos', 'rooms.id', '=', 'room_photos.room_id')
-            ->leftJoin('amenity_to_room', 'rooms.id', '=', 'amenity_to_room.room_id')
-            ->leftJoin('amenities', 'amenity_to_room.amenity_id', '=', 'amenities.id')
-            ->selectRaw('rooms.*, COALESCE(GROUP_CONCAT(DISTINCT room_photos.room_photo_url), "https://tinyurl.com/RoomPhoto1") AS URL')
-            ->selectRaw('GROUP_CONCAT(DISTINCT amenities.amenity_name) AS amenities')
             ->where('rooms.status', 'available')
             ->whereNotExists(function (Builder $subquery) use ($check_in, $check_out) {
                 $subquery->selectRaw(1)

@@ -99,10 +99,14 @@
                             <p class="discover-rooms-minimal__paraph">{{$room['description']}}</p>
                         </div>
                         @if($room['offer_price'])
-                            <del>{{$room['price']}}</del>
-                            <h2 class="discover-rooms-minimal__h2" style="color: rgb(222, 87, 119);">
-                                ${{$room['price'] * $room['discount'] / 100}}<span class="discover-rooms-minimal-h2__span"">/Night</span>
-                            </h2>
+                            <div>
+                                <h2 class="discover-rooms-minimal__h2" style="font-size: 1.2em;">
+                                    <del>{{$room_price}}</del><span class="discover-rooms-minimal-h2__span"">/Night</span>
+                                </h2>
+                                <h2 class="discover-rooms-minimal__h2" style="color: rgb(222, 87, 119);">
+                                    ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                </h2>
+                            </div>
                         @else 
                             <h2 class="discover-rooms-minimal__h2">
                                 ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>

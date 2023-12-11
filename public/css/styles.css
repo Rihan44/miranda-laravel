@@ -1182,8 +1182,10 @@ main section.discover div.discover-rooms div.discover-rooms__icons {
   position: relative;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  top: 20px;
   z-index: 2;
+  top: -20px;
+  margin-bottom: 30px;
+  left: 15%;
 }
 main section.discover div.discover-rooms div.discover-rooms__icons img.discover-rooms-icons__img {
   width: 15px;

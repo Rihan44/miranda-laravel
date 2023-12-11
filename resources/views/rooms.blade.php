@@ -44,18 +44,31 @@
                 @foreach ($rooms as $room)
                 <div class="swiper-slide">
                     <div class="rooms-list__room">
-                        <img class="rooms-list-room__img" src="{{$room['URL']}}" alt="room" />
+                        @foreach($room->first_photo as $photo)
+                            <img class="rooms-list-room__img" src="{{$photo->room_photo_url}}" alt="img{{$room->room_type}}" />
+                        @endforeach
                         <div class="discover-rooms__icons">
-                            @foreach ($room->amenities_array as $amenity)
-                                @if (isset($amenity_icons[$amenity]))
-                                    <img class="discover-rooms-icons__img" src="{{ $amenity_icons[$amenity] }}" alt="{{ $amenity }}" />
-                                @endif
+                            @foreach ($room->amenities as $amenity)
+                                <img class="discover-rooms-icons__img" src="{{ $amenity_icons[$amenity->amenity_name] }}" alt="{{ $amenity }}" />
                             @endforeach
                         </div>
                         <h3 class="rooms-list-room__h3">{{$room['room_type']}}</h3>
                         <p class="rooms-list-room__paraph">{{$room['description']}}</p>
                         <div class="rooms-list-room__price-info">
-                            <h2 class="rooms-list-room-price-info__h2">${{$room['price']}}/Night</h2>
+                            @if($room['offer_price'])
+                            <div>
+                                <h2 class="rooms-list-room-price-info__h2" style="font-size: 0.8em;">
+                                    <del>{{$room_price}}</del><span class="discover-rooms-minimal-h2__span"">/Night</span>
+                                </h2>
+                                <h2 class="rooms-list-room-price-info__h2" style="color: rgb(222, 87, 119);">
+                                ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                </h2>
+                            </div>
+                            @else 
+                                <h2 class="rooms-list-room-price-info__h2">
+                                    ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                </h2>
+                            @endif
                             <button class="rooms-list-room-price-info__button">
                                 @if($check_in !== '' && $check_out !== '')
                                     <a href="rooms_details/{{$room['id']}}?check_in={{$check_in}}&check_out={{$check_out}}">Booking now</a>
