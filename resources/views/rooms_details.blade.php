@@ -216,18 +216,18 @@
                         <p class="rooms-list-room__paraph">{{$room['description']}}</p>
                         <div class="rooms-list-room__price-info">
                             @if($room['offer_price'])
-                            <div>
-                                <h2 class="rooms-list-room-price-info__h2" style="font-size: 0.8em;">
-                                    <del>{{$room_price}}</del><span class="discover-rooms-minimal-h2__span"">/Night</span>
-                                </h2>
-                                <h2 class="rooms-list-room-price-info__h2" style="color: rgb(222, 87, 119);">
-                                    ${{$room['price'] * $room['discount'] / 100}}<span class="discover-rooms-minimal-h2__span"">/Night</span>
-                                </h2>
-                            </div>
-                            @else 
-                                <h2 class="rooms-list-room-price-info__h2">
-                                    ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
-                                </h2>
+                                <div>
+                                    <h2 class="rooms-list-room-price-info__h2" style="font-size: 0.8em;">
+                                        <del>{{$room_price}}</del><span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
+                                    <h2 class="rooms-list-room-price-info__h2" style="color: rgb(222, 87, 119);">
+                                        ${{$room['price'] * $room['discount'] / 100}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
+                                </div>
+                                @else 
+                                    <h2 class="rooms-list-room-price-info__h2">
+                                        ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
                             @endif
                             <button class="rooms-list-room-price-info__button"> 
                                 <a href="../rooms_details/{{$room['id']}}">Booking now</a>

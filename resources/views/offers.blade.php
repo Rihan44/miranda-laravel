@@ -21,7 +21,9 @@
 @foreach ($rooms as $room)
     <section class="luxury-rooms-offers">
         <div class="luxury-rooms-offers-container__info-price">
-            <img class="luxury-rooms-offers-container-info-price__img" src="{{$room['URL']}}" alt="luxury-room" />
+            @foreach($room->first_photo as $photo)
+                <img class="luxury-rooms-offers-container-info-price__img" src="{{$photo->room_photo_url}}" alt="luxury-room" />
+            @endforeach
             <div class="luxury-rooms-offers-container-info-prices__container">
                 <h4 class="luxury-rooms-offers-container-info-price__price-before">
                     <del>${{$room['price']}}</del><span>/Night</span>
@@ -109,20 +111,31 @@
                 @foreach ($two_rooms as $room)
                     <div class="swiper-slide slide-img1">
                         <div class="discover-rooms__icons">
-                            <img class="discover-rooms-icons__img" src="/img/bed-icon.png" alt="bed-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/wifi-icon.png" alt="wifi-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/car-icon.png" alt="car-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/cold-icon.png" alt="snow-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/gym-icon.png" alt="gym-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/no-smoking-icon.png" alt="no-smoking-icon" />
-                            <img class="discover-rooms-icons__img" src="/img/cocktail-icon.png" alt="cocktail-icon" />
+                            @foreach ($room->amenities as $amenity)
+                                <img class="discover-rooms-icons__img" src="{{ $amenity_icons[$amenity->amenity_name] }}" alt="{{ $amenity }}" />
+                            @endforeach
                         </div>
-                        <img class="swiper-slide__img" src="{{$room['URL']}}"alt="img1" />
+                        @foreach($room->first_photo as $photo)
+                            <img class="swiper-slide__img" src="{{$photo->room_photo_url}}" alt="luxury-room" />
+                        @endforeach
                         <div class="box-container">
                             <h3 class="rooms-list-room__h3">{{$room['room_type']}}</h3>
                             <p class="rooms-list-room__paraph">{{$room['description']}}.</p>
                             <div class="rooms-list-room__price-info">
-                                <h2 class="rooms-list-room-price-info__h2">${{$room['price']}}/Night</h2>
+                                @if($room['offer_price'])
+                                <div>
+                                    <h2 class="rooms-list-room-price-info__h2" style="font-size: 0.8em;">
+                                        <del>{{$room['price']}}</del><span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
+                                    <h2 class="rooms-list-room-price-info__h2" style="color: rgb(222, 87, 119);">
+                                        ${{$room['price'] * $room['discount'] / 100}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
+                                </div>
+                                @else 
+                                    <h2 class="rooms-list-room-price-info__h2">
+                                        ${{$room['price']}}<span class="discover-rooms-minimal-h2__span">/Night</span>
+                                    </h2>
+                            @endif
                                 <button class="rooms-list-room-price-info__button" style="border: none;"> 
                                     <a href="rooms_details/{{$room['id']}}">Booking now</a>
                             </button>

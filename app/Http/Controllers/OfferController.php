@@ -3,27 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
-use Illuminate\Http\Request;
+use App\Models\Amenity;
 
 class OfferController extends Controller
 {
     public function index()
     {
-        $rooms = Room::select('rooms.*')
-        ->leftJoin('room_photos as rp', 'rooms.id', '=', 'rp.room_id')
-        ->selectRaw('COALESCE(GROUP_CONCAT(DISTINCT rp.room_photo_url), "https://tinyurl.com/RoomPhoto1") AS URL')
-        ->where('rooms.offer_price', true)
-        ->groupBy('rooms.id')
-        ->get();
+        $rooms = Room::where('rooms.offer_price', true)->get();
 
-        $two_rooms = Room::select('rooms.*')
-        ->leftJoin('room_photos as rp', 'rooms.id', '=', 'rp.room_id')
-        ->selectRaw('COALESCE(GROUP_CONCAT(DISTINCT rp.room_photo_url), "https://tinyurl.com/RoomPhoto1") AS URL')
-        ->groupBy('rooms.id')
-        ->limit(2)
-        ->get();
+        $two_rooms = Room::all()->shuffle()->take(4);
 
-        return view('offers', ['rooms' => $rooms, 'two_rooms' => $two_rooms, 'form_sent' => false]);
+        $amenity_icons = Amenity::getIcon($rooms);
+
+        return view('offers', ['rooms' => $rooms, 'two_rooms' => $two_rooms, 'form_sent' => false, 'amenity_icons' => $amenity_icons]);
     }
 
 }
