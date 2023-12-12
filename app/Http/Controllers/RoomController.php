@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Amenity;
-use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
 {
-
     public function index()
     {
         $rooms = Room::all();
@@ -26,7 +24,13 @@ class RoomController extends Controller
             }
         }
 
-        return view('rooms', compact('rooms'), ['amenity_icons' => $amenity_icons, 'form_sent' => false, 'check_in' => $check_in, 'check_out' => $check_out, 'room_price' => $room_price]);
+        return view('rooms', compact('rooms'), [
+            'amenity_icons' => $amenity_icons, 
+            'form_sent' => false, 
+            'check_in' => $check_in, 
+            'check_out' => $check_out, 
+            'room_price' => $room_price
+        ]);
     }
 
     public function search_results(Request $request)
@@ -45,7 +49,13 @@ class RoomController extends Controller
             }
         }
 
-        return view('rooms', compact('rooms'), ['amenity_icons' => $amenity_icons, 'form_sent' => false, 'check_in' => $check_in, 'check_out' => $check_out, 'room_price' => $room_price]);
+        return view('rooms', compact('rooms'), [
+            'amenity_icons' => $amenity_icons, 
+            'form_sent' => false, 
+            'check_in' => $check_in, 
+            'check_out' => $check_out, 
+            'room_price' => $room_price
+        ]);
     }
 
     public function show(string $id, Request $request)
@@ -57,7 +67,30 @@ class RoomController extends Controller
 
         $room_detail_type = $room_detail->room_type;
 
-        $related_rooms = Room::where('room_type', $room_detail_type)->where('id', '!=', $id)->limit(2)->get();
+        if($check_in && $check_out){
+            $rooms = Room::request_check($check_in, $check_out)->where('room_type', $room_detail_type)->where('id', '!=', $id);
+            $room_avalible = Room::request_check($check_in, $check_out)->where('id', $id);
+            echo '<pre>';
+            print_r($room_avalible);
+            echo '</pre>';
+
+        }  else {
+            $rooms = Room::where('room_type', $room_detail_type)->where('id', '!=', $id)->get();
+        } 
+
+        // if(isset($availability)){
+        //     $prueba = Room::request_check($check_in, $check_out)->where('room_type', $room_detail_type);
+        //     print_r($prueba);
+        // }
+
+        if(count($rooms) == 0) {
+            $rooms = Room::all();
+            $message = 'These rooms are not in the selected date range';
+        } else {
+            $message = null;
+        }
+
+        $related_rooms = $rooms->shuffle()->take(2);
 
         $amenity_icons = Amenity::getIcon($related_rooms);
 
@@ -74,7 +107,10 @@ class RoomController extends Controller
             'check_in' => $check_in, 
             'check_out' => $check_out,
             'amenity_icons' => $amenity_icons,
-            'room_price' => $room_price
+            'room_price' => $room_price,
+            'message'=> $message
         ]);
     }
+
+    public function check_availability(){}
 }

@@ -145,29 +145,9 @@
      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
      @if($form_sent)
-     <script>
-        alert('eu');
-         Toastify(
-             text: "{{$notification}}",
-             duration: 3000,
-             newWindow: true,
-             close: true,
-             gravity: "top", 
-             position: "center", 
-             stopOnFocus: true, 
-             style: {
-                 background: "rgba(17, 17, 17, 1)",
-                 color: "rgba(153, 153, 153, 1)"
-             }
-             }).showToast();
-     </script> 
-
-
-     @elseif (session('form_sent'))
         <script>
-            alert('eu');
             Toastify(
-                text: "{{session('notification')}}",
+                text: "{{$notification}}",
                 duration: 3000,
                 newWindow: true,
                 close: true,

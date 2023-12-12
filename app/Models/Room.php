@@ -31,8 +31,7 @@ class Room extends Model
 
     public static function request_check($check_in, $check_out) 
     {
-        $rooms = Room::select('rooms.*')
-            ->where('rooms.status', 'available')
+        $rooms = Room::where('rooms.status', 'available')
             ->whereNotExists(function (Builder $subquery) use ($check_in, $check_out) {
                 $subquery->selectRaw(1)
                     ->from('bookings')
@@ -49,5 +48,4 @@ class Room extends Model
 
         return $rooms;
     }
- 
 }

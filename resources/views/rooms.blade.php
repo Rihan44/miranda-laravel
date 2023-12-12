@@ -20,22 +20,22 @@
 
 <section class="rooms__list">
     @if(count($rooms) <= 0)
-    <h3 class="rooms__list-no-rooms">There are no rooms in that date range, search again?</h3>
-    <section class="banner__checkdate">
-        <form class="banner-checkdate__form" id="form_check_availability" method="GET">
-            <div class="banner-checkdate-form__input-container">
-                <label for="arrive">Arrival date</label>
-                <input type="date" name="check_in" id="check_in_rooms" min="<?= date('Y-m-d') ?>" required />
-            </div>
-            <div class="banner-checkdate-form__input-container">
-                <label>Departure Date</label>
-                <input type="date" name="check_out" id="check_out_rooms" required />
-            </div>
-            <button class="banner-checkdate-form__button" type="submit">
-                CHECK AVAILABILITY
-            </button>
-        </form>
-    </section>
+        <h3 class="rooms__list-no-rooms">There are no rooms in that date range, search again?</h3>
+        <section class="banner__checkdate">
+            <form class="banner-checkdate__form" id="form_check_availability" method="GET">
+                <div class="banner-checkdate-form__input-container">
+                    <label for="arrive">Arrival date</label>
+                    <input type="date" name="check_in" id="check_in_rooms" min="<?= date('Y-m-d') ?>" required />
+                </div>
+                <div class="banner-checkdate-form__input-container">
+                    <label>Departure Date</label>
+                    <input type="date" name="check_out" id="check_out_rooms" required />
+                </div>
+                <button class="banner-checkdate-form__button" type="submit">
+                    CHECK AVAILABILITY
+                </button>
+            </form>
+        </section>
     @else
 
     <div class="rooms-list-grid__container">

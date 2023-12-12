@@ -15,26 +15,17 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'email_subject' => 'required',
+            'email_description' => 'required',
+        ]);
 
-        // $request->validate([
-        //     'firstname' => 'required',
-        //     'surname' => 'required',
-        //     'email' => 'required|email',
-        //     'phone' => 'required',
-        //     'specialrequest' => 'required',
-        // ]);
+        $data = $request->all();
 
-        $contact = Contact::create($request);
-        // $contact = Contact::create([
-        //     'name' => $request->input('name'),
-        //     'email' => $request->input('email'),
-        //     'phone' => $request->input('number'),
-        //     'email_subject' => $request->input('subject'),
-        //     'email_description' => $request->input('message'),
-        //     'date' => now()->format('Y-m-d'),
-        //     'date_time' => now()->format('Y-m-d H:i:s'),
-        //     'is_archived' => false,
-        // ]);
+        $contact = Contact::create($data);
 
         if($contact->wasRecentlyCreated){
             $notification = 'Form sent successfully!';

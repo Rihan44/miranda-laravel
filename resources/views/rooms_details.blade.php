@@ -41,28 +41,42 @@
 
     <div class="room-details-type__availability">
         <h4 class="room-details-type-availability__h4">Check Availability</h4>
-        <form class="room-details-type-availability__form" id="room-details-type-availability__form" method="POST">
-            @csrf
-            <label for="check-in">Check In</label>
-            <input type="date" name="check-in" value="{{$check_in}}" id="room-details-type-availability-form__check-in" min="{{date('Y-m-d')}}" {{ $check_in ? 'readonly' : '' }}/>
-            <label for="check-out">Check Out</label>
-            <input type="date" name="check-out" value="{{$check_out}}" id="room-details-type-availability-form__check-out" min="{{date('Y-m-d', strtotime('+1 day'))}}" {{ $check_out ? 'readonly' : '' }}/>
-            <label for="name">Full Name</label>
-            <input type="text" name="name" id="room-details-type-availability-form__name" placeholder="Full Name" required/>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="room-details-type-availability-form__email" placeholder="Email" required/>
-            <label for="phone">Phone</label>
-            <input type="text" name="phone" id="room-details-type-availability-form__phone" placeholder="Number Phone" required/>
-            <label for="message">Message</label>
-            <input type="text" name="message" id="room-details-type-availability-form__message" placeholder="Your Message" required/>
-            <input type="hidden" name="room_price" value="{{$room_detail->price}}"/>
-            <input type="hidden" name="room_id" value="{{$room_detail->id}}"/>
-            <button 
-                id="room-details-type-availability-form__button" 
-                class="room-details-type-availability-form__button" 
-                type="submit">
-                BOOK NOW
-            </button>
+        <form class="room-details-type-availability__form" id="room-details-type-availability__form" method="{{$check_in && $check_out ? 'POST' : 'GET'}}">
+            @if($check_in && $check_out)
+                @csrf
+                <label for="check-in">Check In</label>
+                <input type="date" name="check_in" value="{{$check_in}}" id="room-details-type-availability-form__check-in" min="{{date('Y-m-d')}}" readonly/>
+                <label for="check-out">Check Out</label>
+                <input type="date" name="check_out" value="{{$check_out}}" id="room-details-type-availability-form__check-out" min="{{date('Y-m-d', strtotime('+1 day'))}}" readonly/>
+                <label for="name">Full Name</label>
+                <input type="text" name="guest" id="room-details-type-availability-form__name" placeholder="Full Name" required/>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="room-details-type-availability-form__email" placeholder="Email" required/>
+                <label for="phone">Phone</label>
+                <input type="text" name="phone_number" id="room-details-type-availability-form__phone" placeholder="Number Phone" required/>
+                <label for="message">Message</label>
+                <input type="text" name="special_request" id="room-details-type-availability-form__message" placeholder="Your Message" required/>
+                <input type="hidden" name="order_date" value="{{now()}}"/>
+                <input type="hidden" name="price" value="{{$room_detail->price}}"/>
+                <input type="hidden" name="room_id" value="{{$room_detail->id}}"/>
+                <button 
+                    id="room-details-type-availability-form__button" 
+                    class="room-details-type-availability-form__button" 
+                    type="submit">
+                    BOOK NOW
+                </button>
+            @else 
+                <label for="check-in">Check In</label>
+                <input type="date" name="check_in" value="{{$check_in}}" id="room-details-type-availability-form__check-in" min="{{date('Y-m-d')}}" required/>
+                <label for="check-out">Check Out</label>
+                <input type="date" name="check_out" value="{{$check_out}}" id="room-details-type-availability-form__check-out" min="{{date('Y-m-d', strtotime('+1 day'))}}" required/>
+                <button 
+                    id="room-details-type-availability-form__button" 
+                    class="room-details-type-availability-form__button" 
+                    type="submit">
+                    CHECK AVAILABILITY
+                </button>
+            @endif
         </form>
     </div>
     <p class="room-details-type__paraph">{{$room_detail->description}}</p>
@@ -198,7 +212,7 @@
                                 </h2>
                             @endif
                             <button class="rooms-list-room-price-info__button"> 
-                                <a href="rooms_details/{{$room['id']}}">Booking now</a>
+                                <a href="../rooms_details/{{$room['id']}}">Booking now</a>
                             </button>
                         </div>
                     </div>
@@ -208,7 +222,9 @@
             <div class="swiper-button-prev" id="swiper-button-prev-rooms-details"></div>
             <div class="swiper-button-next" id="swiper-button-next-rooms-details"></div>
         </div>
-
+        @if($message)
+            <p>{{$message}}</p>
+        @endif
     </div>
 
 </section>

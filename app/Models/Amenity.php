@@ -9,7 +9,7 @@ class Amenity extends Model
 {
     use HasFactory;
 
-    public $table = 'amenities';
+    protected $table = 'amenities';
 
     public static function getIcon($rooms) 
     {

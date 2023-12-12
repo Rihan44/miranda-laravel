@@ -86,6 +86,7 @@ CREATE TABLE `bookings` (
   `price` double DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `room_id` int DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `room_id` (`room_id`),
   CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)

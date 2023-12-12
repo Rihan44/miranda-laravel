@@ -234,7 +234,7 @@ if(title === 'About Us'){
     
     let swiper_counter = document.querySelector('#swiper-counter');
     let swiper_wrapper_counter = document.querySelector('.swiper-wrapper__counter');
-    activeNav('about_us.php');
+    activeNav('about');
 
     function initSwiperAbout() {
         if (window.matchMedia("(max-width: 1000px").matches) {
@@ -441,7 +441,7 @@ if(title === 'Room Detail') {
 if(title === 'Offers') {
     let swipper_rooms_offers = document.querySelector('#swipper-rooms-offers');
     let swiper_wrapper_rooms_offers = document.querySelector('.swiper-wrapper__rooms-offers');
-    activeNav('offers.php');
+    activeNav('offers');
 
     function initSwiperRoomsOffers() {
         if (window.matchMedia("(max-width: 1000px").matches) {
@@ -484,7 +484,7 @@ if(title === 'Contact') {
     let subject_input = document.querySelector('#subject-input');
     let message = document.querySelector('#message');
 
-    activeNav('contact.php');
+    activeNav('contact');
 
     form_contact.addEventListener('submit', (e) => {
 
@@ -572,7 +572,7 @@ if(title === 'Contact') {
 /* ----- ROOMS -------- */
 if(title === 'Rooms'){
 
-    activeNav('rooms.php');
+    activeNav('rooms');
 
     function swiperRooms() {
         if (window.matchMedia("(min-width: 1000px").matches) {
