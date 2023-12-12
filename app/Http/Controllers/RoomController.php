@@ -67,21 +67,21 @@ class RoomController extends Controller
 
         $room_detail_type = $room_detail->room_type;
 
+        $no_available = false;
+
         if($check_in && $check_out){
             $rooms = Room::request_check($check_in, $check_out)->where('room_type', $room_detail_type)->where('id', '!=', $id);
-            $room_avalible = Room::request_check($check_in, $check_out)->where('id', $id);
-            echo '<pre>';
-            print_r($room_avalible);
-            echo '</pre>';
+            $room_avalible = Room::check_available($check_in, $check_out, $id);
 
-        }  else {
+            if(count($room_avalible) == 0) {
+                $no_available = true;
+            } else {
+                $no_available = false;
+            }
+
+        } else {
             $rooms = Room::where('room_type', $room_detail_type)->where('id', '!=', $id)->get();
         } 
-
-        // if(isset($availability)){
-        //     $prueba = Room::request_check($check_in, $check_out)->where('room_type', $room_detail_type);
-        //     print_r($prueba);
-        // }
 
         if(count($rooms) == 0) {
             $rooms = Room::all();
@@ -108,7 +108,8 @@ class RoomController extends Controller
             'check_out' => $check_out,
             'amenity_icons' => $amenity_icons,
             'room_price' => $room_price,
-            'message'=> $message
+            'message'=> $message,
+            'no_available' => $no_available
         ]);
     }
 
