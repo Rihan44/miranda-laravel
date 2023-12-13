@@ -28,7 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('orders');
     Route::delete('/orders', [OrderController::class, 'destroy'])->name('orders.destroy');
-    Route::put('/orders/edit_order/{id}', [OrderController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit_order');
 });
 
 Route::get('/about', [AboutController::class, 'index']);
