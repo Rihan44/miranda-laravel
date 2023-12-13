@@ -18,7 +18,7 @@ main {
         position: absolute;
         width: 100%;
         height: 500px;
-        filter: blur(5px);
+        filter: blur(3px);
       } 
 
       div.banner__container {
@@ -37,6 +37,7 @@ main {
           font-size: 0.8em;
           margin-top: 60px;
           background: none;
+          text-shadow: 6px 3px 5px #212121;
         }
 
         h3.banner__secondtitle {
@@ -48,6 +49,7 @@ main {
           width: 100%;
           margin-top: 40px;
           background: none;
+          text-shadow: 6px 3px 5px #212121;
         }
 
         div.banner__buttons {
@@ -109,6 +111,13 @@ main {
         margin-top: 50px;
         position: relative;
         z-index: 0;
+
+        img.banner__img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          filter: blur(3px);
+        } 
         
         div.banner__container {
           max-width: 1300px;

@@ -40,7 +40,7 @@
                  </ul>
              </nav>
              <div class="header-boxgeneral__icons">
-                <a class="header__profileicon" href="/">
+                <a class="header__profileicon" href="/profile">
                     <img class="header-profileicon__icon" src="img/profile_icon.png" alt="profile_icon">
                 </a>
             </div>

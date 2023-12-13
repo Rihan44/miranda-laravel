@@ -130,6 +130,14 @@ header.header {
       }
       div.header-boxgeneral__icons {
         justify-content: space-around;
+
+        a.header__profileicon {
+          transition: 0.3s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
       }
     }
     nav.header-menu__burguer {
