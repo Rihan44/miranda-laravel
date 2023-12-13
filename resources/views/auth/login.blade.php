@@ -38,12 +38,15 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mx-2" href="{{ route('register') }}">
-                {{ __('Dont have an account?') }}
-            </a>
+                <a class="text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ml-2.5" href="{{ route('register') }}">
+                    <x-secondary-button class="ms-3">
+                        {{ __('Register') }}
+                    </x-secondary-button>
+                </a>
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
+
 </x-guest-layout>
