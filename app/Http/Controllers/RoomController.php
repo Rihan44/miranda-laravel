@@ -10,7 +10,7 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room::all()->where('status', 'available');
 
         $amenity_icons = Amenity::getIcon($rooms);
 
@@ -82,11 +82,11 @@ class RoomController extends Controller
             }
 
         } else {
-            $rooms = Room::where('room_type', $room_detail_type)->where('id', '!=', $id)->get();
+            $rooms = Room::where('room_type', $room_detail_type)->where('status', 'available')->where('id', '!=', $id)->get();
         } 
 
         if(count($rooms) == 0) {
-            $rooms = Room::all();
+            $rooms = Room::all()->where('status', 'available');
             $message = 'These rooms are not in the selected date range';
         } else {
             $message = null;
