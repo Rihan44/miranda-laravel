@@ -31,21 +31,23 @@ class Room extends Model
 
     public static function request_check($check_in, $check_out) 
     {
-        $rooms = Room::where('rooms.status', 'available')
+        $rooms = Room::where('status', 'available')
             ->whereNotExists(function (Builder $subquery) use ($check_in, $check_out) {
                 $subquery->selectRaw(1)
                     ->from('bookings')
                     ->whereColumn('rooms.id', 'bookings.room_id')
                     ->where(function (Builder $query) use ($check_in, $check_out) {
-                        $query->whereBetween(DB::raw("'$check_in'"), ['bookings.check_in', 'bookings.check_out'])
-                            ->orWhereBetween(DB::raw("'$check_out'"), ['bookings.check_in', 'bookings.check_out'])
-                            ->orWhereBetween('bookings.check_in', [DB::raw("'$check_in'"), DB::raw("'$check_out'")])
-                            ->orWhereBetween('bookings.check_out', [DB::raw("'$check_in'"), DB::raw("'$check_out'")]);
-                    });
-            })
-            ->groupBy('rooms.id')
+                            $query->whereBetween('bookings.check_in', [$check_in, $check_out])
+                                ->orWhereBetween('bookings.check_out', [$check_in, $check_out])
+                                ->orWhere(function ($q) use ($check_in, $check_out) {
+                                    $q->where('bookings.check_in', '<', $check_in)
+                                        ->where('bookings.check_out', '>', $check_out);
+                                });
+                        });
+                })
+            ->groupBy('id')
             ->get();
-
+            
         return $rooms;
     }
 

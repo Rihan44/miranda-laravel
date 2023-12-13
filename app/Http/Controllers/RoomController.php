@@ -42,6 +42,8 @@ class RoomController extends Controller
 
         $amenity_icons = Amenity::getIcon($rooms);
 
+        $room_price = 0;
+
         foreach ($rooms as $room) {
             $room_price = $room->price;
             if($room->offer_price){
