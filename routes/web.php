@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/room_service', [OrderController::class, 'order_request']);
     Route::get('/room_service', [OrderController::class, 'create'])->middleware(['auth', 'verified'])->name('room_service');
     Route::get('/edit_order/{id}', [OrderController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit_order');
-    Route::post('/edit_order/{id}', [OrderController::class, 'update'])->middleware(['auth', 'verified'])->name('edit_order');
+    Route::patch('/edit_order/{id}', [OrderController::class, 'update'])->middleware(['auth', 'verified'])->name('edit_order');
 });
 
 Route::get('/', [HomeController::class, 'index']);

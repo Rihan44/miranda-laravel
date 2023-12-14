@@ -25,10 +25,12 @@ class OrderController extends Controller
     public function create()
     {
         $current_user = Auth::user()->id;
-        $orders = Order::with('room')->with('user')->where('user_id', $current_user)->groupBy('room_id')->select('room_id')->get();
+        $orders = Order::with('user')->where('user_id', $current_user)->get();
+        $rooms = Room::select('id', 'room_number')->get()->sortBy('room_number');
+
         $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
 
-        return view('room_service', ['orders' => $orders, 'types' => $types]);
+        return view('room_service', ['orders' => $orders, 'types' => $types, 'rooms' => $rooms]);
     }
 
     public function order_request(Request $request): RedirectResponse

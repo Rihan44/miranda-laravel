@@ -35,8 +35,8 @@
                             <label for="room" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Select the Room</label>
                             <select id="room" name="room_id" class="bg-white-50 border border-white-300 text-white-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-dark-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option selected>Choose a Room</option>
-                                @foreach ($orders as $order)
-                                    <option value="{{$order->room->id}}">{{$order->room->room_number}}</option>
+                                @foreach ($rooms as $room)
+                                    <option value="{{$room->id}}">{{$room->room_number}}</option>
                                 @endforeach
                             </select>
                         </div>

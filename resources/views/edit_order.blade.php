@@ -12,6 +12,7 @@
                     <h2 class="text-4xl font-bold dark:text-dark">Edit your Order</h2>
                     <form class="max-w-sm mx-auto" method="POST">
                         @csrf
+                        @method('PATCH')
                         @foreach ($order as $or)
                             <div class="mb-5">
                                 <label for="type" class="block mb-2 text-sm font-medium text-white-900 dark:text-dark">Order Type</label>
