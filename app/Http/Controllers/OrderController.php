@@ -43,7 +43,7 @@ class OrderController extends Controller
         }
     }
   
-    public function show(Request $request)
+    public function edit(Request $request)
     {
         $id = $request->id;
 
@@ -52,20 +52,21 @@ class OrderController extends Controller
         return view('edit_order', ['order' => $order]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request): RedirectResponse
     {
-        //
-    }
+        $id = $request->input('id');
+        $type = $request->input('type');
+        $description = $request->input('description');
+        
+        $affected = DB::table('orders')
+        ->where('id', $id)
+        ->update(['type' => $type, 'description' => $description]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        if ($affected > 0) {
+            return Redirect::to('/orders')->with('success', 'Order updated successfully');
+        } else {
+            return Redirect::to('/orders')->with('error', 'Failed to update order');
+        }
     }
 
     public function destroy(Request $request): RedirectResponse
