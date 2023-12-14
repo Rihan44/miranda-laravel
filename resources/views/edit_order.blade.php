@@ -22,7 +22,6 @@
                                 <input type="text" id="description" name="description" class="shadow-sm bg-white-50 border border-white-300 text-dark-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" value="{{$or->description}}" required>
                             </div>
                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                            <input type="hidden" name="id" value="{{$or->id}}">
                             <div class="mb-7">
                                 <label for="room" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Select the Room</label>
                                 <select id="room" name="room_id" class="bg-white-50 border border-white-300 text-white-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-dark-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500">
