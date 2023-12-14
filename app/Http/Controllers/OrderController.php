@@ -68,8 +68,12 @@ class OrderController extends Controller
     {
         $id = $request->input('id');
 
-        Order::destroy($id);
+        $order_deleted = Order::destroy($id);
 
-        return Redirect::to('/orders');
+        if ($order_deleted > 0) {
+            return Redirect::to('/orders')->with('success', 'Order deleted successfully');
+        } else {
+            return Redirect::to('/orders')->with('error', 'Failed to delete order');
+        }
     }
 }
