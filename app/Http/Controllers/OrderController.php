@@ -43,18 +43,15 @@ class OrderController extends Controller
         }
     }
   
-    public function edit(Request $request)
+    public function edit(string $id)
     {
-        $id = $request->id;
-
         $order = Order::with('room')->with('user')->where('id', $id)->get();
 
         return view('edit_order', ['order' => $order]);
     }
 
-    public function update(Request $request): RedirectResponse
+    public function update(Request $request, string $id): RedirectResponse
     {
-        $id = $request->input('id');
         $type = $request->input('type');
         $description = $request->input('description');
         
