@@ -3,7 +3,7 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
      <link rel="stylesheet" href="/css/styles.css">
@@ -41,7 +41,7 @@
                  </ul>
              </nav>
              <div class="header-boxgeneral__icons">
-                <a class="header__profileicon" href="/profile">
+                <a class="header__profileicon" href="/room_service">
                     <img class="header-profileicon__icon" src="/img/profile_icon.png" alt="profile_icon">
                 </a>
             </div>
@@ -52,6 +52,7 @@
                  <li><a class="menu__link" href="/rooms">Rooms</a></li>
                  <li><a class="menu__link" href="/offers">Offers</a></li>
                  <li><a class="menu__link" href="/contact">Contact</a></li>
+                 <li><a class="menu__link" href="/room_service">Profile</a></li>
              </ul>
          </nav>
      </header>
