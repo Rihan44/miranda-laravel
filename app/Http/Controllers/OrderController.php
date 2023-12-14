@@ -24,23 +24,28 @@ class OrderController extends Controller
 
     public function create()
     {
-        //
+        $current_user = Auth::user()->id;
+        $orders = Order::with('room')->with('user')->where('user_id', $current_user)->groupBy('room_id')->select('room_id')->get();
+
+        return view('room_service', ['orders' => $orders]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function order_request(Request $request): RedirectResponse
     {
-        //
-    }
+        $data = $request->all();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+        $order = Order::create($data);
+
+        return Redirect::to('/orders');
+    }
+  
+    public function show(Request $request)
     {
-        //
+        $id = $request->id;
+
+        $order = Order::with('room')->with('user')->where('id', $id)->get();
+
+        return view('edit_order', ['order' => $order]);
     }
 
     /**
