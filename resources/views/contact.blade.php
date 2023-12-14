@@ -2,6 +2,13 @@
 @section('title', 'Contact')
 
 @section('content')
+
+@if(session('success'))
+    {{toastify()->success(session('success'));}}
+@elseif(session('error'))
+    {{toastify()->error(session('error'));}}
+@endif
+
 <section class="rooms__banner">
     <h2 class="rooms__firsttitle" id="rooms__firsttitle">THE ULTIMATE LUXURY </h2>
     <h3 class="rooms__secondtitle" id="rooms__secondtitle">New Details</h3>

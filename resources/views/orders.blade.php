@@ -11,14 +11,9 @@
                 <div class="p-6 text-gray-900">
                    <h2 class="text-4xl font-bold dark:text-dark">{{Auth::user()->name }}'s Order</h2>
                    @if(session('success'))
-                        <div class="alert alert-success">
                             {{toastify()->success(session('success'));}}
-                        </div>
-
                         @elseif(session('error'))
-                            <div class="alert alert-danger">
-                                {{toastify()->error(session('error'));}}
-                            </div>
+                            {{toastify()->error(session('error'));}}
                     @endif
                 </div>
                 <div class="p-6 ">
@@ -66,7 +61,6 @@
                                         </button>
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{-- TODO METER UN MODAL PARA ACEPTAR --}}
                                         <form method="post" action="{{ route('orders.destroy') }}">
                                             @csrf
                                             @method('delete')

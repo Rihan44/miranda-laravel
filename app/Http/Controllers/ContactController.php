@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {
@@ -13,7 +15,7 @@ class ContactController extends Controller
         return view('contact', ['form_sent' => false]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -27,13 +29,10 @@ class ContactController extends Controller
 
         $contact = Contact::create($data);
 
-        if($contact->wasRecentlyCreated){
-            $notification = 'Form sent successfully!';
-
-            return view('contact', ['form_sent' => true, 'notification' => $notification]);
+        if ( $contact ) {
+            return Redirect::to('contact')->with('success', 'Contact send successfully');
         } else {
-
+            return Redirect::to('contact')->with('error', 'Error sending the message');
         }
-
     }
 }

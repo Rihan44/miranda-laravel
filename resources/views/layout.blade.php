@@ -7,6 +7,7 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
      <link rel="stylesheet" href="/css/styles.css">
+     @toastifyCss
      <script type="text/javascript" src="/js/main.js" defer></script>
      @yield('scripts')
      <title>@yield('title')</title>
@@ -41,7 +42,7 @@
              </nav>
              <div class="header-boxgeneral__icons">
                 <a class="header__profileicon" href="/profile">
-                    <img class="header-profileicon__icon" src="img/profile_icon.png" alt="profile_icon">
+                    <img class="header-profileicon__icon" src="/img/profile_icon.png" alt="profile_icon">
                 </a>
             </div>
          </div>
@@ -148,6 +149,6 @@
        
      <script src="https://kit.fontawesome.com/b85064bdf0.js" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     @toastifyJs
  </body>
  </html>

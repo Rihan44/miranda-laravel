@@ -26,7 +26,7 @@ class PasswordUpdateTest extends TestCase
 
         $response
             ->assertSessionHasNoErrors()
-            ->assertRedirect('/profile');
+            ->assertRedirect('/rooms_service');
 
         $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
     }
@@ -46,6 +46,6 @@ class PasswordUpdateTest extends TestCase
 
         $response
             ->assertSessionHasErrorsIn('updatePassword', 'current_password')
-            ->assertRedirect('/profile');
+            ->assertRedirect('/rooms_service');
     }
 }

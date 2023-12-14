@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="banner">
-    <img src="./img/strong_team.jpg" alt="banner" class="banner__img"/>
+    <img src="/img/strong_team.jpg" alt="banner" class="banner__img"/>
     <div class="banner__container">
         <h2 class="banner__firstitle">THE ULTIMATE LUXURY EXPERIENCE</h2>
         <h3 class="banner__secondtitle">The Perfect Base For You</h3>

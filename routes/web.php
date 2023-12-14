@@ -11,9 +11,6 @@ use App\Http\Controllers\OrderController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -26,6 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/edit_order/{id}', [OrderController::class, 'update'])->middleware(['auth', 'verified'])->name('edit_order');
 });
 
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/rooms', [RoomController::class, 'index']);
@@ -36,5 +36,6 @@ Route::post('/rooms_details/{id}', [BookingController::class, 'store']);
 Route::get('/offers', [OfferController::class, 'index']);
 
 Route::get('/contact', [ContactController::class, 'create']);
+Route::post('/contact', [ContactController::class, 'store']);
 
 require __DIR__.'/auth.php';

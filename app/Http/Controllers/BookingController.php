@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\RedirectResponse;
 
 class BookingController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
 
         $request->validate([
@@ -25,14 +27,11 @@ class BookingController extends Controller
         $data = $request->all();
 
         $booking = Booking::create($data);
-
-        if($booking->wasRecentlyCreated){
-            $form_sent = true;
-            $notification = 'Form sent successfully!';
-
-            /* TODO MOSTRAR OTRA PAGINA CON LOS DETALLES */
-            /* Y LA NOTIFICACION NO ENVIAR TEXTO SI NO MOSTRARLO EN LA VISTA SI ES TRUE */
-            return redirect('/rooms')->with(['form_sent' => $form_sent, 'notification' =>  $notification]);
-        } 
+        
+        if ($booking) {
+            return Redirect::to('rooms')->with('success', 'Booked successfully');
+        } else {
+            return Redirect::to('rooms')->with('error', 'Error with the booked');
+        }
     }
 }

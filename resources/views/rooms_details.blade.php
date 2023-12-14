@@ -41,7 +41,7 @@
 
     <div class="room-details-type__availability">
         @if($no_available)
-            <p>This room is not available on the selected date, select another date</p>
+            <p class="p__no-available">This room is not available on the selected date, select another date</p>
         @endif
         <h4 class="room-details-type-availability__h4">Check Availability</h4>
         @if($no_available)
@@ -241,7 +241,7 @@
             <div class="swiper-button-next" id="swiper-button-next-rooms-details"></div>
         </div>
         @if($message)
-            <p>{{$message}}</p>
+            <p class="p__message">{{$message}}</p>
         @endif
     </div>
 

@@ -54,6 +54,13 @@ main {
       flex-direction: column;
       align-items: center;
       margin-bottom: 30px;
+      p.p__no-available {
+        margin-bottom: 30px;
+        color: rgb(231, 49, 49);
+        font-size: 1.2em;
+        text-align: center;
+        font-family: $fontPrincipal;
+      }
       h4.room-details-type-availability__h4 {
         font-family: $fontPrincipal;
         font-weight: 700;
