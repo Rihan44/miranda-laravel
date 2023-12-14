@@ -10,6 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h2 class="text-4xl font-bold dark:text-dark">Do your Order</h2>
+                    @if(session('success'))
+                            {{toastify()->success(session('success'));}}
+                        @elseif(session('error'))
+                            {{toastify()->error(session('error'));}}
+                    @endif
                     <form class="max-w-sm mx-auto" method="POST">
                         @csrf
                         <div class="mb-5">
