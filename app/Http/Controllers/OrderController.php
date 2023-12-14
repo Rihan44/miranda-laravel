@@ -34,9 +34,13 @@ class OrderController extends Controller
     {
         $data = $request->all();
 
-        $order = Order::create($data);
+        $order_created = Order::create($data);
 
-        return Redirect::to('/orders');
+        if ($order_created) {
+            return Redirect::to('/room_service')->with('success', 'Order created successfully');
+        } else {
+            return Redirect::to('/room_service')->with('error', 'Failed creating the order');
+        }
     }
   
     public function show(Request $request)
