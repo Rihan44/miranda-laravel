@@ -470,7 +470,27 @@ if(title === 'Offers') {
     window.addEventListener('resize', () => {
         initSwiperRoomsOffers();
     })
-    
+
+    function swiperOffers() {
+        if (window.matchMedia("(min-width: 1000px").matches) {
+            new Swiper(".my__swiper", {
+                direction: "vertical",
+                slidesPerView: 3,
+                grid: {
+                    rows: 2,
+                },
+                pagination: {
+                    el: ".rooms__swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                },
+            });
+        } 
+    }
+
+    swiperRooms();
 }
 
 /* ----CONTACT---- */
