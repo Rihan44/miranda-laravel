@@ -26,8 +26,9 @@ class OrderController extends Controller
     {
         $current_user = Auth::user()->id;
         $orders = Order::with('room')->with('user')->where('user_id', $current_user)->groupBy('room_id')->select('room_id')->get();
+        $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
 
-        return view('room_service', ['orders' => $orders]);
+        return view('room_service', ['orders' => $orders, 'types' => $types]);
     }
 
     public function order_request(Request $request): RedirectResponse
@@ -46,8 +47,9 @@ class OrderController extends Controller
     public function edit(string $id)
     {
         $order = Order::with('room')->with('user')->where('id', $id)->get();
-
-        return view('edit_order', ['order' => $order]);
+        $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
+        
+        return view('edit_order', ['order' => $order, 'types' => $types]);
     }
 
     public function update(Request $request, string $id): RedirectResponse
