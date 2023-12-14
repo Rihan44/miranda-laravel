@@ -15,7 +15,12 @@
                         @foreach ($order as $or)
                             <div class="mb-5">
                                 <label for="type" class="block mb-2 text-sm font-medium text-white-900 dark:text-dark">Order Type</label>
-                                <input type="text" id="type" name="type" class="shadow-sm bg-white-50 border border-white-300 text-dark-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-dark-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" value="{{$or->type}}" required>
+                                <select id="type" name="type" class="bg-white-50 border border-white-300 text-white-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-dark-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected>{{$or->type}}</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{$type}}">{{$type}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-5">
                                 <label for="description" class="block mb-2 text-sm font-medium text-dark-900 dark:text-dark">Order Description</label>
