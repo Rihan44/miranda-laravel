@@ -48,7 +48,6 @@ class OrderController extends Controller
   
     public function edit(string $id)
     {
-        // $order = Order::with('room')->with('user')->where('id', $id)->get();
         $order = Order::with('room')->with('user')->findOrfail($id);
         $types = Order::orders_type();
         
@@ -73,8 +72,6 @@ class OrderController extends Controller
 
     public function destroy(string $id): RedirectResponse
     {
-        // $id = $request->input('id');
-
         $order_deleted = Order::destroy($id);
 
         if ($order_deleted > 0) {
