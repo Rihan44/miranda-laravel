@@ -17,17 +17,15 @@ class RoomController extends Controller
         $check_in = '';
         $check_out = '';
 
+        $room_price = 0.0; 
+
         foreach ($rooms as $room) {
             $room_price = $room->price;
             if($room->offer_price){
                 $room->price = $room->price * $room->discount / 100;
             }
         }
-
-        if(!$room_price){
-            $room_price = 0.0; 
-        }
-
+   
         return view('rooms', compact('rooms'), [
             'amenity_icons' => $amenity_icons, 
             'form_sent' => false, 
