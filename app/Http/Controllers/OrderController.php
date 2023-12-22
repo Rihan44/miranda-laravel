@@ -70,9 +70,9 @@ class OrderController extends Controller
         }
     }
 
-    public function destroy(string $id): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        $order_deleted = Order::destroy($id);
+        $order_deleted = Order::destroy($request->id);
 
         if ($order_deleted > 0) {
             return Redirect::to('/orders')->with('success', 'Order deleted successfully');
