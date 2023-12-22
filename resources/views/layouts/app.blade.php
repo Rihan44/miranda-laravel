@@ -19,6 +19,11 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            @if(session('success'))
+                {{toastify()->success(session('success'));}}
+                @elseif(session('error'))
+                    {{toastify()->error(session('error'));}}
+            @endif
             @include('layouts.navigation')
 
             <!-- Page Heading -->

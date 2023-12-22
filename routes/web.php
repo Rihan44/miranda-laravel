@@ -15,6 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::resources();
     Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('orders');
     Route::delete('/orders', [OrderController::class, 'destroy'])->name('orders.destroy');
     Route::post('/room_service', [OrderController::class, 'order_request']);

@@ -10,11 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h2 class="text-4xl font-bold dark:text-dark">Do your Order</h2>
-                    @if(session('success'))
-                            {{toastify()->success(session('success'));}}
-                        @elseif(session('error'))
-                            {{toastify()->error(session('error'));}}
-                    @endif
+
                     <form class="max-w-sm mx-auto" method="POST">
                         @csrf
                         <div class="mb-5">
@@ -30,6 +26,7 @@
                             <label for="description" class="block mb-2 text-sm font-medium text-dark-900 dark:text-dark">Order Description</label>
                             <input type="text" id="description" name="description" class="shadow-sm bg-white-50 border border-white-300 text-dark-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="I want the dinner.." required>
                         </div>
+                        {{-- TODO CAMBIAR ESTE HIDDEN --}}
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         <div class="mb-7">
                             <label for="room" class="block mb-2 text-sm font-medium text-gray-900 dark:text-dark">Select the Room</label>

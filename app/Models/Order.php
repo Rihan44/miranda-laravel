@@ -24,4 +24,10 @@ class Order extends Model
     {
         return $this->belongsTo(Room::class);
     }
+
+    public static function orders_type() 
+    {
+        $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
+        return $types;
+    }
 }

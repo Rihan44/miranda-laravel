@@ -25,17 +25,17 @@ class OrderController extends Controller
     public function create()
     {
         $current_user = Auth::user()->id;
-        $orders = Order::with('user')->where('user_id', $current_user)->get();
         $rooms = Room::select('id', 'room_number')->get()->sortBy('room_number');
 
-        $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
+        $types = Order::orders_type();
 
-        return view('room_service', ['orders' => $orders, 'types' => $types, 'rooms' => $rooms]);
+        return view('room_service', ['types' => $types, 'rooms' => $rooms]);
     }
 
     public function order_request(Request $request): RedirectResponse
     {
         $data = $request->all();
+        /* PASARLE EL ID POR AQUÍ EN VEZ DE POR VALUE */
 
         $order_created = Order::create($data);
 
@@ -48,8 +48,9 @@ class OrderController extends Controller
   
     public function edit(string $id)
     {
-        $order = Order::with('room')->with('user')->where('id', $id)->get();
-        $types = ['Food', 'Mini Bar', 'Movie', 'Tour', 'Private Pool'];
+        // $order = Order::with('room')->with('user')->where('id', $id)->get();
+        $order = Order::with('room')->with('user')->findOrfail($id);
+        $types = Order::orders_type();
         
         return view('edit_order', ['order' => $order, 'types' => $types]);
     }
@@ -70,9 +71,9 @@ class OrderController extends Controller
         }
     }
 
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(string $id): RedirectResponse
     {
-        $id = $request->input('id');
+        // $id = $request->input('id');
 
         $order_deleted = Order::destroy($id);
 
