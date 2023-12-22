@@ -24,6 +24,10 @@ class RoomController extends Controller
             }
         }
 
+        if(!$room_price){
+            $room_price = 0.0; 
+        }
+
         return view('rooms', compact('rooms'), [
             'amenity_icons' => $amenity_icons, 
             'form_sent' => false, 
