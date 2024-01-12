@@ -48,7 +48,8 @@ class OrderController extends Controller
   
     public function edit(string $id)
     {
-        $order = Order::with('room')->with('user')->findOrfail($id);
+        // $order = Order::with('room')->with('user')->findOrfail($id);
+        $order = Order::with('room')->with('user')->where('id', $id)->get();
         $types = Order::orders_type();
         
         return view('edit_order', ['order' => $order, 'types' => $types]);

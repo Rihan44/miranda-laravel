@@ -6,12 +6,12 @@
     <h2 class="rooms__firsttitle" id="rooms__firsttitle">THE ULTIMATE LUXURY </h2>
     <h3 class="rooms__secondtitle" id="rooms__secondtitle">Our Offers</h3>
     <div class="rooms__buttons" id="rooms__buttons">
-        <a class="banner-buttons__home" href="/index.php
+        <a class="banner-buttons__home" href="/
                 ">
             Home
         </a>
         <p>|</p>
-        <a class="banner-buttons__about" href="/offers.php
+        <a class="banner-buttons__about" href="/offers
                 ">
             Offers
         </a>

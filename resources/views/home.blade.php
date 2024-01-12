@@ -132,14 +132,14 @@
             exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat you have to understand this.</p>
         <button class="meet-video-container__button-dektop">
-            <a href="/rooms.php">
+            <a href="/rooms">
                 ROOMS
             </a>
         </button>
     </div>
     <iframe class="meet-video__iframe" src="https://www.youtube.com/embed/Bu3Doe45lcU?si=5QAaDhCSNoHIDPD3&amp;start=25&end=69" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <button class="meet-video__button">
-        <a href="/rooms.php">
+        <a href="/rooms">
             ROOMS
         </a></button>
     <div class="meet-video__background-gold-desktop">
